@@ -1,0 +1,7 @@
+www/.DS_Store
+www/node_modules/
+www/dist/
+www/npm-debug.log
+www/test/unit/coverage
+www/test/e2e/reports
+www/selenium-debug.log
