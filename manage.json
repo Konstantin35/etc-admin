@@ -1,0 +1,29 @@
+{
+	"coin": "eth",
+	"threads": 2,
+  "listen": "localhost:8090",
+
+	"upstream": {
+		"url": "http://127.0.0.1:8545",
+		"timeout": "10s"
+	},
+
+	"mongo": {
+		"endpoint": "localhost:27017",
+		"database": "etc_pool"
+	},
+
+  "redis": {
+    "endpoint": "localhost:6379",
+		"poolSize": 10,
+		"database": 0,
+		"password": ""
+  },
+
+	"address": "0x047259fd53e0918f64e36dff5f632d730d7a12ca",
+
+	"newrelicEnabled": false,
+	"newrelicName": "MyEtherProxy",
+	"newrelicKey": "SECRET_KEY",
+	"newrelicVerbose": false
+}
