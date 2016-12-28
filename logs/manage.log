@@ -1,4 +1,0 @@
-2016-12-28/17:58:28 main.go:23 [INF] Loading config: /Users/gavin/goprojects/src/manageserver/manage.json
-2016-12-28/17:58:28 main.go:69 [INF] Running with 2 threads
-2016-12-28/17:58:33 controller.go:61 [INF] method:POST
-2016-12-28/17:58:33 controller.go:71 [INF] after parse , username:admin-etcpassword:123456

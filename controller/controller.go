@@ -2,12 +2,12 @@ package controller
 
 import (
 	"encoding/json"
+	"etc-pool-admin/rpc"
+	"etc-pool-admin/storage"
 	"fmt"
 	"github.com/cihub/seelog"
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/sessions"
-	"etc-pool-admin/rpc"
-	"etc-pool-admin/storage"
 	"net/http"
 	"strings"
 	"time"
@@ -56,19 +56,11 @@ func Login(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
 	res.Header().Set("Access-Control-Allow-Credentials", "true")
-	res.Header().Set("Access-Control-Allow-Methods", "OPTOINS, POST")
-
-	seelog.Info("method:", req.Method)
-	if req.Method == "OPTIONS" {
-		res.WriteHeader(http.StatusOK)
-		return
-	}
 
 	req.ParseForm()
 
 	username := req.FormValue("username")
 	pwd := req.FormValue("password")
-	seelog.Info("after parse , username:", username, "password:", pwd)
 	//validate username and pwd
 	checked := storage.CheckUserAdmin(username, pwd, Conf.Mongo)
 	if checked == false {
@@ -84,11 +76,13 @@ func Login(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		seelog.Info("login signed token error:", err)
 	}
+	//可以不再使用cookie
 	http.SetCookie(res, &http.Cookie{
 		Name:    "Auth",
 		Value:   signedToken,
 		Expires: time.Now().Add(time.Hour * 24),
 	})
+	res.Header().Set("json-web-token", signedToken)
 	res.WriteHeader(http.StatusOK)
 	session, _ := store.Get(req, signedToken)
 	session.Save(req, res)
