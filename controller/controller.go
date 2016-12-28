@@ -82,7 +82,8 @@ func Login(res http.ResponseWriter, req *http.Request) {
 		Value:   signedToken,
 		Expires: time.Now().Add(time.Hour * 24),
 	})
-	res.Header().Set("json-web-token", signedToken)
+	res.Header().Set("Access-Control-Expose-Headers", "Json-Web-Token")
+	res.Header().Set("Json-Web-Token", signedToken)
 	res.WriteHeader(http.StatusOK)
 	session, _ := store.Get(req, signedToken)
 	session.Save(req, res)
