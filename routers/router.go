@@ -2,7 +2,7 @@ package router
 
 import (
 	"github.com/gorilla/mux"
-	"manageserver/controller"
+	"etc-pool-admin/controller"
 )
 
 var Routes *mux.Router
