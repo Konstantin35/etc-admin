@@ -9,7 +9,6 @@ import (
 	"github.com/dgrijalva/jwt-go"
 	"github.com/gorilla/sessions"
 	"net/http"
-	"strings"
 	"time"
 )
 
@@ -63,12 +62,6 @@ func Login(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		seelog.Info("login signed token error:", err)
 	}
-	//可以不再使用cookie
-	http.SetCookie(res, &http.Cookie{
-		Name:    "Auth",
-		Value:   signedToken,
-		Expires: time.Now().Add(time.Hour * 24),
-	})
 	res.Header().Set("Access-Control-Expose-Headers", "Json-Web-Token")
 	res.Header().Set("Json-Web-Token", signedToken)
 	res.WriteHeader(http.StatusOK)
@@ -78,6 +71,8 @@ func Login(res http.ResponseWriter, req *http.Request) {
 
 func PoolChartData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
+	res.Header().Set("Access-Control-Request-Headers", "Json-Web-Token")
 	pass, err := validate(req)
 	if err != nil || pass == false {
 		seelog.Info("validate err:", err)
@@ -106,6 +101,8 @@ func PoolChartData(res http.ResponseWriter, req *http.Request) {
 
 func StatisticData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
+	res.Header().Set("Access-Control-Request-Headers", "Json-Web-Token")
 	pass, err := validate(req)
 	if err != nil || pass == false {
 		seelog.Info("validate err:", err)
@@ -129,22 +126,15 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 //Validate using for check token
 func validate(req *http.Request) (bool, error) {
 	t := time.Now()
-	cookie, err := req.Cookie("Auth")
-	if err != nil {
-		return false, err
-	}
-	if cookie.Expires.Unix() > t.Unix() {
-		return false, nil
-	}
-	str := cookie.String()
-	cookiestr := strings.Split(str, "Auth=")
-	session, _ := store.Get(req, str)
+	webtoken := req.Header.Get("Json-Web-Token")
+
+	session, _ := store.Get(req, webtoken)
 	if session.IsNew {
 		session.Options.MaxAge = -1
 		return false, nil
 	}
 
-	token, err := jwt.Parse(cookiestr[1], func(token *jwt.Token) (interface{}, error) {
+	token, err := jwt.Parse(webtoken, func(token *jwt.Token) (interface{}, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
 		}

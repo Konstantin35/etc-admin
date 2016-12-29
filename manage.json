@@ -1,7 +1,7 @@
 {
 	"coin": "eth",
 	"threads": 2,
-  "listen": "10.0.21.37:8090",
+  "listen": "localhost:8090",
 
 	"upstream": {
 		"url": "http://127.0.0.1:8545",
