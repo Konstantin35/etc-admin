@@ -66,6 +66,7 @@ func Login(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Json-Web-Token", signedToken)
 	res.WriteHeader(http.StatusOK)
 	session, _ := store.Get(req, signedToken)
+	session.Options.MaxAge = 3600 * 24
 	session.Save(req, res)
 }
 

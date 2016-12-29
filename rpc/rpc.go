@@ -4,10 +4,11 @@ import (
 	"bytes"
 	"encoding/json"
 	"errors"
-	"github.com/cihub/seelog"
 	"etc-pool-admin/utils/common"
+	"github.com/cihub/seelog"
 	"math/big"
 	"net/http"
+	"strconv"
 	"time"
 )
 
@@ -42,17 +43,19 @@ func NewRPCClient(url string, timeout string) *RPCClient {
 }
 
 //GetAccountBalance get given address balance by rpc
-func (r *RPCClient) GetAccountBalance(account string) (*big.Int, error) {
+func (r *RPCClient) GetAccountBalance(account string) (int64, error) {
 	rpcResp, err := r.doPost(r.Url, "eth_getBalance", []string{account, "latest"})
 	if err != nil {
-		return nil, err
+		return -1, err
 	}
 	var reply string
 	err = json.Unmarshal(*rpcResp.Result, &reply)
 	if err != nil {
-		return nil, err
+		return -1, err
 	}
-	return common.String2Big(reply), err
+
+	balance := new(big.Rat).SetInt(common.String2Big(reply))
+	return weiToShannonInt64(balance), err
 }
 
 func (r *RPCClient) doPost(url string, method string, params interface{}) (*JSONRpcResp, error) {
@@ -79,4 +82,11 @@ func (r *RPCClient) doPost(url string, method string, params interface{}) (*JSON
 		return nil, errors.New(rpcResp.Error["message"].(string))
 	}
 	return rpcResp, err
+}
+
+func weiToShannonInt64(wei *big.Rat) int64 {
+	shannon := new(big.Rat).SetInt(common.Shannon)
+	inShannon := new(big.Rat).Quo(wei, shannon)
+	value, _ := strconv.ParseInt(inShannon.FloatString(0), 10, 64)
+	return value
 }
