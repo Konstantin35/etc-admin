@@ -38,19 +38,6 @@ var Backend *storage.RedisClient
 var RpcClient *rpc.RPCClient
 var store = sessions.NewCookieStore([]byte("secret-session-store"))
 
-//MainPage return pool chart hashrate data and other statistic values
-func MainPage(res http.ResponseWriter, req *http.Request) {
-	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
-	pass, err := validate(req)
-	if err != nil || pass == false {
-		seelog.Info("validate err:", err)
-		res.WriteHeader(http.StatusForbidden)
-		return
-	}
-	//pass validate
-	res.Write([]byte("this is main page"))
-}
-
 //Login get user name and pwd, return a token
 func Login(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
