@@ -71,7 +71,7 @@ func Login(res http.ResponseWriter, req *http.Request) {
 func PoolChartData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
-	res.Header().Set("Access-Control-Request-Headers", "Json-Web-Token")
+
 	pass, err := validate(req)
 	if err != nil || pass == false {
 		seelog.Info("validate err:", err)
@@ -79,6 +79,8 @@ func PoolChartData(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 	if req.Method == "OPTIONS" {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", "GET")
 		res.WriteHeader(http.StatusOK)
 		return
 	}
@@ -105,7 +107,7 @@ func PoolChartData(res http.ResponseWriter, req *http.Request) {
 func StatisticData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
-	res.Header().Set("Access-Control-Request-Headers", "Json-Web-Token")
+
 	pass, err := validate(req)
 	if err != nil || pass == false {
 		seelog.Info("validate err:", err, pass)
@@ -114,6 +116,8 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 	}
 
 	if req.Method == "OPTIONS" {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", "GET")
 		res.WriteHeader(http.StatusOK)
 		return
 	}
