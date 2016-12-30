@@ -2,12 +2,12 @@ package main
 
 import (
 	"encoding/json"
-	"github.com/cihub/seelog"
-	"github.com/yvasiyarov/gorelic"
 	"etc-pool-admin/controller"
 	"etc-pool-admin/routers"
 	"etc-pool-admin/rpc"
 	"etc-pool-admin/storage"
+	"github.com/cihub/seelog"
+	"github.com/yvasiyarov/gorelic"
 	"net/http"
 	"os"
 	"path/filepath"
@@ -44,6 +44,8 @@ func startNewrelic(cfg controller.Config) {
 		nr.Run()
 	}
 }
+
+//TODO make a session manage util package
 
 func main() {
 	//recover function

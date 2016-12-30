@@ -7,9 +7,7 @@ import (
 	"fmt"
 	"github.com/cihub/seelog"
 	"github.com/dgrijalva/jwt-go"
-	"github.com/gorilla/sessions"
 	"net/http"
-	"strings"
 	"time"
 )
 
@@ -36,7 +34,6 @@ const salt = "pool-manage-server-by-Gavin"
 var Conf Config
 var Backend *storage.RedisClient
 var RpcClient *rpc.RPCClient
-var store = sessions.NewCookieStore([]byte("secret-session-store"))
 
 //Login get user name and pwd, return a token
 func Login(res http.ResponseWriter, req *http.Request) {
@@ -59,25 +56,21 @@ func Login(res http.ResponseWriter, req *http.Request) {
 		Issuer:    username,
 		ExpiresAt: time.Now().Add(time.Hour * 24).Unix(),
 	})
+	seelog.Info("login token:", token)
 	signedToken, err := token.SignedString([]byte(salt))
 	if err != nil {
 		seelog.Info("login signed token error:", err)
 	}
-	//可以不再使用cookie
-	http.SetCookie(res, &http.Cookie{
-		Name:    "Auth",
-		Value:   signedToken,
-		Expires: time.Now().Add(time.Hour * 24),
-	})
+	seelog.Info("login signed token:", signedToken)
 	res.Header().Set("Access-Control-Expose-Headers", "Json-Web-Token")
 	res.Header().Set("Json-Web-Token", signedToken)
 	res.WriteHeader(http.StatusOK)
-	session, _ := store.Get(req, signedToken)
-	session.Save(req, res)
 }
 
 func PoolChartData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
+	res.Header().Set("Access-Control-Request-Headers", "Json-Web-Token")
 	pass, err := validate(req)
 	if err != nil || pass == false {
 		seelog.Info("validate err:", err)
@@ -106,9 +99,11 @@ func PoolChartData(res http.ResponseWriter, req *http.Request) {
 
 func StatisticData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
+	res.Header().Set("Access-Control-Request-Headers", "Json-Web-Token")
 	pass, err := validate(req)
 	if err != nil || pass == false {
-		seelog.Info("validate err:", err)
+		seelog.Info("validate err:", err, pass)
 		res.WriteHeader(http.StatusForbidden)
 		return
 	}
@@ -129,33 +124,20 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 //Validate using for check token
 func validate(req *http.Request) (bool, error) {
 	t := time.Now()
-	cookie, err := req.Cookie("Auth")
-	if err != nil {
-		return false, err
-	}
-	if cookie.Expires.Unix() > t.Unix() {
-		return false, nil
-	}
-	str := cookie.String()
-	cookiestr := strings.Split(str, "Auth=")
-	session, _ := store.Get(req, str)
-	if session.IsNew {
-		session.Options.MaxAge = -1
-		return false, nil
-	}
+	webtoken := req.Header.Get("Json-Web-Token")
+	seelog.Info("token:", webtoken)
 
-	token, err := jwt.Parse(cookiestr[1], func(token *jwt.Token) (interface{}, error) {
+	token, err := jwt.Parse(webtoken, func(token *jwt.Token) (interface{}, error) {
 		if _, ok := token.Method.(*jwt.SigningMethodHMAC); !ok {
 			return nil, fmt.Errorf("Unexpected signing method: %v", token.Header["alg"])
 		}
 		return []byte(salt), nil
 	})
-	if claims, ok := token.Claims.(jwt.StandardClaims); ok && token.Valid {
-		if claims.ExpiresAt < t.Unix() {
+	if claims, ok := token.Claims.(jwt.MapClaims); ok && token.Valid {
+		seelog.Info("token valid:", token.Valid, "claim:", claims)
+		if claims.VerifyExpiresAt(t.Unix(), true) {
 			return true, nil
 		}
-	} else {
-		return false, err
 	}
-	return false, nil
+	return false, err
 }
