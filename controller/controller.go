@@ -140,7 +140,7 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 func validate(req *http.Request) (bool, error) {
 	t := time.Now()
 	webtoken := req.Header.Get("Json-Web-Token")
-	if webtoken == "" {
+	if len(webtoken) < 1 {
 		return false, errors.New("cannot get jwt when validate")
 	}
 	seelog.Info("token:", webtoken)
