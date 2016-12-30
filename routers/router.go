@@ -14,7 +14,7 @@ func init() {
 	Routes.HandleFunc("/main/statistic", controller.StatisticData).Methods("GET", "OPTIONS")
 	/****************routers for user manage********************/
 	Routes.HandleFunc("/user/query", controller.QueryUsers).Methods("GET") //query by wallet address or login account or email or phone number
-	Routes.HandleFunc("/user/info/setment", controller.SetUserInfo).Methods("PUT")
+	Routes.HandleFunc("/user/info/settings", controller.SetUserInfo).Methods("PUT")
 	Routes.HandleFunc("/user/walletaddress/data/chart", controller.GetAddressChartData).Methods("GET")
 	Routes.HandleFunc("/user/walletaddress/data/benefit", controller.GetAddressBenefitData).Methods("GET")
 	Routes.HandleFunc("/user/walletaddress/info/miners", controller.GetMinersInfo).Methods("GET")

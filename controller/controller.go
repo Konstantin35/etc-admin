@@ -2,6 +2,7 @@ package controller
 
 import (
 	"encoding/json"
+	"errors"
 	"etc-pool-admin/rpc"
 	"etc-pool-admin/storage"
 	"fmt"
@@ -134,6 +135,9 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 func validate(req *http.Request) (bool, error) {
 	t := time.Now()
 	webtoken := req.Header.Get("Json-Web-Token")
+	if webtoken == "" {
+		return false, errors.New("cannot get jwt when validate")
+	}
 	seelog.Info("token:", webtoken)
 
 	token, err := jwt.Parse(webtoken, func(token *jwt.Token) (interface{}, error) {
