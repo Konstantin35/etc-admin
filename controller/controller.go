@@ -77,6 +77,10 @@ func PoolChartData(res http.ResponseWriter, req *http.Request) {
 		res.WriteHeader(http.StatusForbidden)
 		return
 	}
+	if req.Method == "OPTIONS" {
+		res.WriteHeader(http.StatusOK)
+		return
+	}
 	chartdata := make(map[string]interface{})
 	poolhashs, err := Backend.GetPoolChartData()
 	if err != nil {
@@ -105,6 +109,11 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 	if err != nil || pass == false {
 		seelog.Info("validate err:", err, pass)
 		res.WriteHeader(http.StatusForbidden)
+		return
+	}
+
+	if req.Method == "OPTIONS" {
+		res.WriteHeader(http.StatusOK)
 		return
 	}
 	res.WriteHeader(http.StatusOK)
