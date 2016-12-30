@@ -9,21 +9,20 @@
 	  <!-- header over -->
 	  <div class="login-bg">
 		  <div class="container">
-			  <div class="login-form">
+			  <div class="login-form" :class="{'login-err':loginErr}">
 			  	<div class="account">
-			  		<input type="text" name="account" placeholder="账号" v-model="username" />
-			  		<!-- <label for="account" class="account-label">账号：</label> -->
+			  		<input type="text" name="name" placeholder="账号" v-model="username" @focus="inputFocused" />
 			  	</div>
 			  	<div class="password">
-			  		<input type="password" name="password" placeholder="密码" v-model="password" />
-			  		<!-- <label for="password" class="password-label">密码：</label> -->
+			  		<input type="password" name="password" placeholder="密码" v-model="password" @focus="inputFocused" />
 			  	</div>
 			  	<div class="helper">
 			  	  <a class="remember">
 			  		<input class="remember_password" type="checkbox" name="remember_password" v-model="isremember" />
-			  		<a @click="rememberchange">记住密码</a></a>
+			  		<a @click="rememberchange">记住我</a></a>
 			  	</div>
 			  	<div class="submit">
+			  	  <div class="err-panel" > 账号或密码错误 </div>
 			  		<a class="submit-btn" @click="loginon">登录</a>
 			  	</div>
 			  </div>
@@ -41,6 +40,7 @@ export default{
 		return {
 			//view state
 			isremember: false,
+			loginErr: false,
 
 			//data state
 			username: "",
@@ -54,61 +54,40 @@ export default{
 		rememberchange(){
 			this.isremember = !this.isremember
 		},
-		remember(){
-			if(this.isremember){
-				localStorage.setItem(config.BTCC.PM_USERNAME,this.username)
-				localStorage.setItem(config.BTCC.PM_PWD,this.password)
-			}
+		inputFocused(){
+			this.loginErr = false;
 		},
 		loginon(){
-			// console.log(this.$router.replace({path:'/manage'}))
-			this.remember()
-			
 			var header = new Headers({
 				'Content-Type' : 'application/x-www-form-urlencoded'
 			})
 
-			var formdata = new FormData()
-			formdata.append('username',this.username)
-			formdata.append('password',this.password)
-			// fetch(config.BTCC.PM_APIHOST+'login',{
-			// 	method: 'OPTIONS'
-			// })
-			// .then(oresp => {
-			// 	console.log(oresp)
-			// 	if(oresp.ok){
-					fetch(config.BTCC.PM_APIHOST+'login',{
-						method: 'POST',
-						headers: header,
-						body: formdata
-						// body: "username="+this.username+"&password="+this.password
-					})
-					.then(resp => {
-						if(resp.ok){
-							console.log('accssce')
-						}
-					})
-			// 	}else{
-			// 		console.log('failed')
-			// 	}
-			// })
-
-			// var xhr = new XMLHttpRequest();
-			// xhr.onreadystatechange = function(){
-			// 	// console.log(xhr.readyState,xhr.status)
-			// 	console.log(document.cookie)
-			// 	if(xhr.readyState === 4 && xhr.status==200){
-			// 		console.log(xhr.responseText)
-			// 	}
-			// }
-			// xhr.open('POST',config.BTCC.PM_APIHOST+'login',true)
-			// xhr.setRequestHeader('Content-Type', 'application/x-www-form-urlencoded');
-			// xhr.send("username="+this.username+"&password="+this.password)
+			// var formdata = new FormData()
+			// formdata.append('username',this.username)
+			// formdata.append('password',this.password)
+			fetch(config.BTCC.PM_APIHOST+'login',{
+				method: 'POST',
+				headers: header,
+				// body: formdata
+				body: "username="+this.username+"&password="+this.password
+			})
+			.then(resp => {
+				if(resp.ok){
+					if(this.isremember){
+			      localStorage.setItem(config.BTCC.PM_USERNAME,this.username)
+				    localStorage.setItem(config.BTCC.PM_JWT,resp.headers.get('Json-Web-Token'))
+					}
+					this.$router.replace('/manage')
+				}else{
+					this.loginErr = true
+				}
+			})
 		},
 		init(){
-			this.username = localStorage.getItem(config.BTCC.PM_USERNAME)
-			this.password = localStorage.getItem(config.BTCC.PM_PWD)
 			this.isremember = localStorage.getItem(config.BTCC.PM_ISREMEMBER) === 'true'
+			if(this.isremember){
+				this.username = localStorage.getItem(config.BTCC.PM_USERNAME)
+			}
 		}
 	},
 	watch:{
@@ -117,7 +96,7 @@ export default{
 			  localStorage.setItem(config.BTCC.PM_ISREMEMBER,newVal)
 			}else{
 				localStorage.removeItem(config.BTCC.PM_USERNAME)
-				localStorage.removeItem(config.BTCC.PM_PWD)
+				localStorage.removeItem(config.BTCC.PM_JWT)
 				localStorage.removeItem(config.BTCC.PM_ISREMEMBER)
 			}
 		}
@@ -153,9 +132,6 @@ export default{
 
 .account, .password{
   position: relative;
-  /* padding-left: 48px; */
-  height: 38px;
-  line-height: 38px;
 }
 
 .password, .helper, .submit{
@@ -164,7 +140,7 @@ export default{
 
 /*. account & password
 ---------------------*/
-.account-label, .password-label {
+/* .account-label, .password-label {
     position: absolute;
     z-index: 3;
     top: 0;
@@ -179,9 +155,9 @@ export default{
 .password-label{
     background-position: -48px 0px;
 }
-
+ */
 .account input, .password input{
-	height: 20px;
+	height: 38px;
 	width: 100%;
 	border: none;
 	outline: none;
@@ -219,7 +195,16 @@ export default{
 /*. submit
 ---------------------*/
 .submit{
+	position: relative;
 	margin-top: 50px;
+}
+.err-panel{
+	display: none;
+  position: absolute;
+  width: 286px;
+  line-height: 30px;
+  top: -40px;
+  color: #f00;
 }
 .submit-btn{
 	display: block;
@@ -237,5 +222,14 @@ export default{
 }
 .submit-btn:focus{
 	background-color: #4c8fdf;
+}
+
+/*. VUe Bind Classes
+---------------------*/
+.login-err input{
+	border-bottom-color: #f00;
+}
+.login-err .err-panel{
+	display: block;
 }
 </style>

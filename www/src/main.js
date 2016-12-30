@@ -5,6 +5,8 @@ import config from '../config'
 import login from './components/login'
 import content from './components/content'
 import home from './components/home'
+import userManage from './components/userManage'
+import poolManage from './components/poolManage'
 
 Vue.use(VueRouter)
 
@@ -16,7 +18,9 @@ const routes = [
   	path: '/manage', 
   	component: content,
   	children: [
-  	  {path: '/', component: home}
+      {path: '/', component: home},
+      {path: '/userManage', component: userManage},
+      {path: '/poolManage', component: poolManage},
   	]
   },
 ]
@@ -33,16 +37,5 @@ new Vue({
   el: '#app',
   template: '<App/>',
   components: { App },
-  router,
-  // beforeCreate(){
-  //   fetch(config.BTCC.PM_APIHOST+'login',{ method: 'OPTIONS' })
-    // .then(resp => {
-      // resp.ok ? console.log('success!') : console.log('failed!')
-    //   }
-    // )
-  	// //检查本地环境，是否已经登录
-  	// if(!!localStorage.getItem(config.BTCC.JWT)){
-  	// 	router.replace({path:'/manage'})
-  	// }
-  // }
+  router
 });

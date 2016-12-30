@@ -4,9 +4,10 @@
     <div class="container">
 		  <img class="logo" src="../assets/logo.png" width="108" height="26" />
 		  <ul class="nav">
-		    <li><a href="">主页</a></li>
-		    <li><a href="">用户管理</a></li>
-		    <li><a href="">矿池管理</a></li>
+		    <li><router-link to="/manage">主页</router-link></li>
+		    <li><router-link to="/userManage">用户管理</router-link></li>
+		    <li><router-link to="/poolManage">矿池管理</router-link></li>
+		    <li><a href="javascript:void(0);">退出</a></li>
 		  </ul>
 		</div>
 	</div>
