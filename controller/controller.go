@@ -72,18 +72,19 @@ func PoolChartData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
 
-	pass, err := validate(req)
-	if err != nil || pass == false {
-		seelog.Info("validate err:", err)
-		res.WriteHeader(http.StatusForbidden)
-		return
-	}
 	if req.Method == "OPTIONS" {
 		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
 		res.Header().Set("Access-Control-Allow-Methods", "GET")
 		res.WriteHeader(http.StatusOK)
 		return
 	}
+	pass, err := validate(req)
+	if err != nil || pass == false {
+		seelog.Info("validate err:", err)
+		res.WriteHeader(http.StatusForbidden)
+		return
+	}
+
 	chartdata := make(map[string]interface{})
 	poolhashs, err := Backend.GetPoolChartData()
 	if err != nil {
@@ -108,6 +109,12 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
 
+	if req.Method == "OPTIONS" {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", "GET")
+		res.WriteHeader(http.StatusOK)
+		return
+	}
 	pass, err := validate(req)
 	if err != nil || pass == false {
 		seelog.Info("validate err:", err, pass)
@@ -115,12 +122,6 @@ func StatisticData(res http.ResponseWriter, req *http.Request) {
 		return
 	}
 
-	if req.Method == "OPTIONS" {
-		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
-		res.Header().Set("Access-Control-Allow-Methods", "GET")
-		res.WriteHeader(http.StatusOK)
-		return
-	}
 	res.WriteHeader(http.StatusOK)
 	//TODO change poolbalance value to /10*9
 	statistis := Backend.GetMainStatisticData()
