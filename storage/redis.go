@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"github.com/cihub/seelog"
 	"gopkg.in/redis.v3"
 	"math/big"
 	"strconv"
@@ -125,4 +126,59 @@ func (r *RedisClient) GetMainStatisticData() map[string]interface{} {
 	//get pool account address rest etc/eth coin value
 
 	return value
+}
+
+//GetRevenue get given user last payment and total payment amount
+func (r *RedisClient) GetRevenue(wallet string) (last int64, total int64) {
+	tx := r.client.Multi()
+	defer tx.Close()
+
+	cmds, err := tx.Exec(func() error {
+		tx.HGetAllMap(r.formatKey("miners", wallet))
+		tx.ZRevRangeWithScores(r.formatKey("payments", wallet), 0, 1)
+		return nil
+	})
+
+	if err != nil && err != redis.Nil {
+		seelog.Info("get revenue error:", err)
+	} else {
+		result, _ := cmds[0].(*redis.StringStringMapCmd).Result()
+		total, _ = strconv.ParseInt(result["paid"], 10, 64)
+		payments := convertPaymentsResults(cmds[1].(*redis.ZSliceCmd))
+		last = payments[0]["amount"].(int64)
+	}
+
+	return
+}
+
+// Try to convert all numeric strings to int64
+func convertStringMap(m map[string]string) map[string]interface{} {
+	result := make(map[string]interface{})
+	var err error
+	for k, v := range m {
+		result[k], err = strconv.ParseInt(v, 10, 64)
+		if err != nil {
+			result[k] = v
+		}
+	}
+	return result
+}
+
+func convertPaymentsResults(raw *redis.ZSliceCmd) []map[string]interface{} {
+	var result []map[string]interface{}
+	for _, v := range raw.Val() {
+		tx := make(map[string]interface{})
+		tx["timestamp"] = int64(v.Score)
+		fields := strings.Split(v.Member.(string), ":")
+		tx["tx"] = fields[0]
+		// Individual or whole payments row
+		if len(fields) < 3 {
+			tx["amount"], _ = strconv.ParseInt(fields[1], 10, 64)
+		} else {
+			tx["address"] = fields[1]
+			tx["amount"], _ = strconv.ParseInt(fields[2], 10, 64)
+		}
+		result = append(result, tx)
+	}
+	return result
 }

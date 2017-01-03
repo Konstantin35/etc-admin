@@ -3,6 +3,7 @@ package storage
 import (
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"strings"
 	"time"
 )
 
@@ -14,6 +15,18 @@ type MongoConfig struct {
 type admin struct {
 	Username string `bson:"username"`
 	Password string `bson:"password"`
+}
+type UserInfo struct {
+	UserAccount string  `bson:"account"`
+	Wallet      string  `bson:"walletAddress"`
+	Fee         float64 `bson:"fee"`
+	Phone       int64   `bson:"phone"`
+	Email       string  `bson:"email"`
+}
+
+type offLine struct {
+	Wallet string `bson:"walletAddress"`
+	Time   string `bson:"offlineTime"`
 }
 
 var curSession *mgo.Session
@@ -46,4 +59,40 @@ func CheckUserAdmin(user string, pwd string, cfg MongoConfig) bool {
 		return true
 	}
 	return false
+}
+
+//GetUserInfo get user info by user account or wallet address or phonenumer or email
+func GetUserInfo(key string, value string, cfg MongoConfig) []UserInfo {
+	//TODO insert user info when user log in at first time
+	connect(cfg)
+	defer curSession.Close()
+
+	infos := []UserInfo{}
+	value = strings.ToLower(value)
+	selector := bson.M{key: value}
+
+	db := curSession.DB("etc_pool")
+	collection := db.C("user_info")
+	err := collection.Find(selector).All(&infos)
+	if err != nil && err != mgo.ErrNotFound {
+		return nil
+	}
+	return infos
+}
+
+//GetOnlineStat get online or offline state by given walletaddress, return offline time and if online return true, otherwise false
+func GetOnlineStat(wallet string, cfg MongoConfig) string {
+	connect(cfg)
+	defer curSession.Close()
+
+	selector := bson.M{"walletAddress": wallet}
+
+	offlineInfo := offLine{}
+	db := curSession.DB("etc_pool")
+	collection := db.C("off_line")
+	err := collection.Find(selector).One(&offlineInfo)
+	if err == nil {
+		return offlineInfo.Time
+	}
+	return ""
 }
