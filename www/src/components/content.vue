@@ -45,4 +45,8 @@
 	background-color: ;
 }
 
+a.router-link-active {
+    color: #19a8f7;
+}
+
 </style>

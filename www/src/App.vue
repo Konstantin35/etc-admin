@@ -16,9 +16,10 @@ export default {
 </script>
 
 <style>
-html,body,div,p,ul,li,span,label,input,a{
+html,body,div,p,ul,li,span,label,input,a,h2{
   margin: 0;
   padding: 0;
+	color: #333;
 }
 body{
 	background-color: #f3f3f3;

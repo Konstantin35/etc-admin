@@ -107,7 +107,7 @@ export default{
 <style type="text/css" scoped>
 .welcome{
 	font-size: 18px;
-	color: #4c8fdf;
+	color: #19a8f7;
 	margin-left: 20px;
 }
 /*. content

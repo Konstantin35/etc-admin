@@ -1,0 +1,456 @@
+2016-12-30/13:18:48 main.go:23 [INF] Loading config: /Users/jhin/workspace/BTCC/etc-pool-admin/manage.json
+2016-12-30/13:18:48 main.go:71 [INF] Running with 2 threads
+2016-12-30/13:19:02 controller.go:146 [INF] token:null
+2016-12-30/13:19:02 controller.go:146 [INF] token:null
+2016-12-30/13:20:18 main.go:23 [INF] Loading config: /Users/jhin/workspace/BTCC/etc-pool-admin/manage.json
+2016-12-30/13:20:18 main.go:71 [INF] Running with 2 threads
+2016-12-30/13:21:24 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:21:24 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:21:45 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:21:45 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:22:26 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:22:26 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:23:06 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:23:06 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:24:14 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:24:14 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:24:43 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:24:43 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:29:56 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:29:56 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:30:42 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:30:42 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:31:34 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:31:34 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:31:43 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:31:43 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:32:19 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:32:19 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/13:32:22 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:32:22 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:32:34 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:32:34 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:35:28 main.go:23 [INF] Loading config: /Users/jhin/workspace/BTCC/etc-pool-admin/manage.json
+2016-12-30/13:35:28 main.go:71 [INF] Running with 2 threads
+2016-12-30/13:35:44 controller.go:83 [INF] validate err:cannot get jwt when validate
+2016-12-30/13:37:58 controller.go:83 [INF] validate err:cannot get jwt when validate
+2016-12-30/13:39:31 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:39:31 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:39:43 controller.go:60 [INF] login token:&{ 0xc4200f73c0 map[typ:JWT alg:HS256] { 1483162783  0 admin-etc 0 }  false}
+2016-12-30/13:39:43 controller.go:65 [INF] login signed token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNjI3ODMsImlzcyI6ImFkbWluLWV0YyJ9.ZwmwtXAf4Y_ZpxUnmSYukTzoYYeiuDZHZmv8stVLRPA
+2016-12-30/13:40:46 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNjI3ODMsImlzcyI6ImFkbWluLWV0YyJ9.ZwmwtXAf4Y_ZpxUnmSYukTzoYYeiuDZHZmv8stVLRPA
+2016-12-30/13:40:46 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483162783e+09 iss:admin-etc]
+2016-12-30/13:42:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:42:59 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:44:49 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:44:49 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:44:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:44:59 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:49:34 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:49:34 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/13:50:10 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:50:10 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:50:17 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:50:17 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:50:33 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:50:33 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:50:45 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:50:45 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:50:51 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:50:51 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:51:06 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:51:06 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:51:09 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:51:09 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:53:58 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:53:58 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:54:00 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:54:00 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:54:04 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:54:04 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:54:26 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:54:26 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:55:54 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:55:54 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:56:02 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:56:02 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/13:56:07 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:56:07 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:56:49 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:56:49 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/13:56:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/13:56:59 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:00:57 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:00:57 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:01:01 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:01:01 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:01:16 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:01:16 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:05:55 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:05:55 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:06:02 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:06:02 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:11:38 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:11:38 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:13:08 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:13:08 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:16:29 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:16:29 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:17:21 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:17:21 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:17:25 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:17:25 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:18:15 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:18:15 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:18:27 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:18:27 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:18:45 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:18:45 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:27:08 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:27:08 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:27:38 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:27:38 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/14:29:07 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:29:07 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:29:18 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:29:18 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:29:35 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:29:35 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:30:17 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:30:17 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:30:53 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:30:53 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:31:00 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:31:00 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:31:01 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:31:01 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:31:16 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:31:16 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:32:33 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:32:33 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:32:51 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:32:51 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/14:33:28 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:33:28 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:33:37 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:33:37 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:34:18 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:34:18 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:34:26 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:34:26 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:40:46 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:40:46 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:40:49 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:40:49 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:41:05 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:41:05 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:42:01 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:42:01 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:42:05 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:42:05 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:42:34 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:42:34 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:52:34 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:52:34 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:52:58 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:52:58 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:53:02 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:53:02 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:53:09 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:53:09 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:53:24 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:53:24 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:53:49 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:53:49 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:54:10 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:54:10 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:54:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:54:20 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/14:54:27 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/14:54:27 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:15:57 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:15:57 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/15:16:13 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:16:13 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:30:16 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:30:16 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/15:30:21 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:30:21 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:30:57 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:30:57 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:31:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:31:20 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/15:31:30 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:31:30 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:31:40 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:31:40 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:31:56 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:31:56 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:32:00 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:32:00 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:32:05 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:32:05 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:33:17 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:33:17 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:36:00 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:36:00 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:36:44 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:36:44 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:36:47 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:36:47 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:37:53 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:37:53 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:38:18 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:38:18 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:38:23 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:38:23 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/15:38:48 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/15:38:48 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:17:15 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:17:15 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:22:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:22:59 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:24:27 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:24:27 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:24:38 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:24:38 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:26:33 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:26:33 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:27:06 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:27:06 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:27:12 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:27:12 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:28:27 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:28:27 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:28:32 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:28:32 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/16:28:57 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:28:57 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:29:05 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:29:05 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/16:29:26 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:29:26 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:29:31 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:29:31 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:30:38 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:30:38 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:33:12 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:33:12 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:33:15 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:33:15 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:35:33 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:35:33 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/16:36:00 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:36:00 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:47:03 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:47:03 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:47:16 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:47:16 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:47:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:47:20 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/16:48:50 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:48:50 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/16:49:16 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:49:16 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:52:25 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:52:25 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/16:53:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:53:20 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:55:42 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:55:42 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/16:56:01 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/16:56:01 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:00:04 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:00:04 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:00:15 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:00:15 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:02:35 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:02:35 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:07:39 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:07:39 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:08:04 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:08:04 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:09:58 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:09:58 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:10:01 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:10:01 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/17:10:35 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:10:35 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:12:16 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:12:16 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:13:28 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:13:28 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:17:43 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:17:43 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:17:54 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:17:54 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:18:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:18:59 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/17:19:10 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:19:10 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:19:18 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:19:18 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/17:22:48 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:22:48 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:23:39 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:23:39 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:25:05 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:25:05 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:27:41 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:27:41 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:28:38 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:28:38 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:28:52 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:28:52 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:34:29 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:34:29 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:34:46 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:34:46 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:34:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:34:59 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:35:15 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:35:15 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:35:42 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:35:42 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:35:52 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:35:52 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:36:12 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:36:12 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:36:26 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:36:26 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/17:37:53 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:37:53 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/17:38:00 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:38:00 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:38:53 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:38:53 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:38:57 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:38:57 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/17:39:08 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:39:08 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:39:10 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:39:10 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:39:36 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:39:36 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:40:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:40:20 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:40:25 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:40:25 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:40:39 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:40:40 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:40:52 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:40:52 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:41:19 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:41:19 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:41:40 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:41:40 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:42:17 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:42:17 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:42:31 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:42:31 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:43:06 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:43:06 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:43:41 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:43:41 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:44:04 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:44:04 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:44:18 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:44:18 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/17:44:42 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/17:44:42 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:02:22 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:02:22 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:03:39 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:03:39 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:03:56 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:03:56 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:04:25 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:04:25 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:04:36 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:04:36 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:04:40 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:04:40 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:07:40 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:07:40 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:10:34 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:10:34 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:10:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:10:59 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:12:51 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:12:51 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:13:04 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:13:04 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:13:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:13:20 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:15:38 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:15:38 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:21:46 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:21:46 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:22:27 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:22:27 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:24:32 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:24:32 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:24:32 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:24:32 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:24:47 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:24:47 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:24:51 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:24:51 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:26:00 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:26:00 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:26:35 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:26:35 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:26:38 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:26:38 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:27:02 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:27:02 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:27:14 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:27:14 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:28:12 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:28:12 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:29:09 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:09 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:29:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:20 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:29:25 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:25 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:29:31 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:31 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:29:42 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:42 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:29:49 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:49 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:29:52 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:52 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:29:56 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:56 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:29:59 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:29:59 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:30:03 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:30:03 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:30:10 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:30:10 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:30:20 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:30:20 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:30:46 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:30:46 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:30:56 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:30:56 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:33:04 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:33:04 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:33:27 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:33:27 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:35:51 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:35:51 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:36:10 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:36:10 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:36:13 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:36:13 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:36:40 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:36:40 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:37:36 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:37:36 controller.go:155 [INF] token valid:trueclaim:map[iss:admin-etc exp:1.483153125e+09]
+2016-12-30/18:39:57 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:39:57 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
+2016-12-30/18:40:28 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODMxNTMxMjUsImlzcyI6ImFkbWluLWV0YyJ9.5yQyCJ-jUntapd709cYMUMYnLbyGEFTEu_kp-Yjoju4
+2016-12-30/18:40:28 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483153125e+09 iss:admin-etc]
