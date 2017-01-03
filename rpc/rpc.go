@@ -46,12 +46,12 @@ func NewRPCClient(url string, timeout string) *RPCClient {
 func (r *RPCClient) GetAccountBalance(account string) (int64, error) {
 	rpcResp, err := r.doPost(r.Url, "eth_getBalance", []string{account, "latest"})
 	if err != nil {
-		return -1, err
+		return 0, err
 	}
 	var reply string
 	err = json.Unmarshal(*rpcResp.Result, &reply)
 	if err != nil {
-		return -1, err
+		return 0, err
 	}
 
 	balance := new(big.Rat).SetInt(common.String2Big(reply))
