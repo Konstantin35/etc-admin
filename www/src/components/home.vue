@@ -120,7 +120,10 @@ export default {
     var jwt = localStorage.getItem( config.BTCC.PM_JWT )
     var header = new Headers({ 'Json-Web-Token' : jwt })
     fetch(config.BTCC.PM_APIHOST + 'main/poolchart',{ headers : header })
-    .then(resp => resp.json())
+    .then(resp => {
+      if(resp.status === 403) this.$router.replace('/')
+      return resp.json()
+    })
     .then(json => {
       json.poolhashs.forEach((el)=>{
         this.chartX.push(el.tempstamp)
@@ -129,7 +132,10 @@ export default {
     })
 
     fetch(config.BTCC.PM_APIHOST + 'main/statistic',{ headers : header })
-    .then(resp => resp.json())
+    .then(resp => {
+      if(resp.status === 403) this.$router.replace('/')
+      return resp.json()
+    })
     .then(json => {
       //need format
       this.hashrate = json.hashrate
@@ -158,7 +164,7 @@ export default {
   display: table-cell;
 }
 .pool-stats p{
-  list-style: none;
-  display: table-cell;
+  padding-left: 30px;
+  padding-right: 30px;
 }
 </style>
