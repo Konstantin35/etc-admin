@@ -7,6 +7,7 @@ import (
 	"github.com/gorilla/mux"
 	"net/http"
 	"regexp"
+	"strconv"
 )
 
 const (
@@ -42,9 +43,10 @@ func QueryUsers(res http.ResponseWriter, req *http.Request) {
 	}
 
 	param := mux.Vars(req)["value"]
-	querykey := regexpParam(param)
-	basicInfo := storage.GetUserInfo(querykey, param, Conf.Mongo)
+	vip, _ := strconv.Atoi(mux.Vars(req)["vip"])
 
+	querykey := regexpParam(param)
+	basicInfo := storage.GetUserInfo(querykey, param, vip, Conf.Mongo)
 	allUserInfo := make([]userAllInfo, len(basicInfo))
 	for idx, basic := range basicInfo {
 		allUserInfo[idx].BasicInfo = basic

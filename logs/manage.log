@@ -466,3 +466,7 @@
 2017-01-03/15:05:48 controller.go:146 [INF] token:eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJleHAiOjE0ODM1MTI0MjQsImlzcyI6ImFkbWluLWV0YyJ9.p-BXAWb7OGDtVD676nIOXfMyLL9lsSqN8aENtW4YP_M
 2017-01-03/15:05:48 controller.go:155 [INF] token valid:trueclaim:map[exp:1.483512424e+09 iss:admin-etc]
 2017-01-03/15:05:48 controller.go:130 [INF] cannot get base address balance coin:Post http://127.0.0.1:8545: dial tcp 127.0.0.1:8545: getsockopt: connection refused
+2017-01-03/15:58:49 main.go:23 [INF] Loading config: /Users/gavin/goprojects/src/etc-pool-admin/manage.json
+2017-01-03/15:58:49 main.go:71 [INF] Running with 2 threads
+2017-01-03/15:58:51 controller.go:161 [INF] token valid:trueclaim:map[exp:1.483513269e+09 iss:admin-etc]
+2017-01-03/16:01:23 controller.go:161 [INF] token valid:trueclaim:map[exp:1.483513269e+09 iss:admin-etc]

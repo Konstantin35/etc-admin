@@ -22,6 +22,7 @@ type UserInfo struct {
 	Fee         float64 `bson:"fee"`
 	Phone       int64   `bson:"phone"`
 	Email       string  `bson:"email"`
+	Vip         int     `bson:"vip"`
 }
 
 type offLine struct {
@@ -62,14 +63,14 @@ func CheckUserAdmin(user string, pwd string, cfg MongoConfig) bool {
 }
 
 //GetUserInfo get user info by user account or wallet address or phonenumer or email
-func GetUserInfo(key string, value string, cfg MongoConfig) []UserInfo {
+func GetUserInfo(key string, value string, vip int, cfg MongoConfig) []UserInfo {
 	//TODO insert user info when user log in at first time
 	connect(cfg)
 	defer curSession.Close()
 
 	infos := []UserInfo{}
 	value = strings.ToLower(value)
-	selector := bson.M{key: value}
+	selector := bson.M{key: value, "vip": vip}
 
 	db := curSession.DB("etc_pool")
 	collection := db.C("user_info")
