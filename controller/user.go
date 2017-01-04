@@ -9,6 +9,7 @@ import (
 	"net/http"
 	"regexp"
 	"strconv"
+	"strings"
 )
 
 const (
@@ -142,20 +143,93 @@ func SetFee(res http.ResponseWriter, req *http.Request) {
 	res.WriteHeader(http.StatusOK)
 }
 
+//GetAddressChartData get 24 housrs hashrate from redis
 func GetAddressChartData(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
 
+	if req.Method == http.MethodOptions {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.WriteHeader(http.StatusOK)
+		return
+	}
+	pass, err := validate(req)
+	if err != nil || pass == false {
+		seelog.Info("validate err:", err)
+		res.WriteHeader(http.StatusForbidden)
+		return
+	}
+	address := mux.Vars(req)["address"]
+	address = strings.ToLower(address)
+	chartdata, err := Backend.GetAccountChartValues(address)
+	if err != nil {
+		seelog.Info("get wallet address chart data error:", err)
+		res.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+
+	res.WriteHeader(http.StatusOK)
+	err = json.NewEncoder(res).Encode(chartdata)
+	if err != nil {
+		seelog.Error("query chart data error, when serializing response data:", err)
+	}
 }
 
-func GetAddressBenefitData(res http.ResponseWriter, req *http.Request) {
+//GetAddressStaticData get revenue data include matured revenue, immature revenue, last paid, total paid
+func GetAddressStaticData(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
 
+	if req.Method == http.MethodOptions {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.WriteHeader(http.StatusOK)
+		return
+	}
+	pass, err := validate(req)
+	if err != nil || pass == false {
+		seelog.Info("validate err:", err)
+		res.WriteHeader(http.StatusForbidden)
+		return
+	}
 }
 
+//GetMinersInfo get miner state about online offline and its hashrate data
 func GetMinersInfo(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
 
+	if req.Method == http.MethodOptions {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.WriteHeader(http.StatusOK)
+		return
+	}
+	pass, err := validate(req)
+	if err != nil || pass == false {
+		seelog.Info("validate err:", err)
+		res.WriteHeader(http.StatusForbidden)
+		return
+	}
 }
 
-func QueryPayment(res http.ResponseWriter, req *http.Request) {
+func QueryPaymentHistory(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
 
+	if req.Method == http.MethodOptions {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.WriteHeader(http.StatusOK)
+		return
+	}
+	pass, err := validate(req)
+	if err != nil || pass == false {
+		seelog.Info("validate err:", err)
+		res.WriteHeader(http.StatusForbidden)
+		return
+	}
 }
 
 func regexpParam(param string) string {

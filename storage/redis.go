@@ -151,6 +151,52 @@ func (r *RedisClient) GetRevenue(wallet string) (last int64, total int64) {
 	return
 }
 
+//GetAccountChartValues get account 24h hashrate for chart, timestamp from recent integer time clock
+func (r *RedisClient) GetAccountChartValues(login string) ([]map[string]interface{}, error) {
+	timenow := time.Now()
+
+	var chartdata []map[string]interface{}
+	cmd := r.client.LRange(r.formatKey("chart", "hashrate", login), 0, -1)
+	if cmd.Err() != nil && cmd.Err() != redis.Nil {
+		return chartdata, cmd.Err()
+	}
+	idx := 0
+	stringArray, _ := cmd.Result()
+	for index, subvalue := range stringArray {
+		substr := strings.Split(subvalue, "=")
+		t, _ := time.Parse("2006-01-02 15:04:05", substr[0])
+		duration := timenow.Unix() - t.Unix()
+		if duration > 86400 {
+			idx = index
+			break
+		}
+		if index == 23 {
+			idx = index + 1
+		}
+	}
+
+	//get now interfer time
+	origin := time.Now().Local().Unix()
+	j := 0
+	for i := 0; i < 24; i++ {
+		temp := make(map[string]interface{})
+		timestamp := time.Unix(origin, 0).Format("2006-01-02 15:00:00")
+		temp["tempstamp"] = timestamp
+		if j < idx {
+			substr := strings.Split(stringArray[j], "=")
+			hashrate, _ := strconv.ParseInt(substr[1], 10, 64)
+			temp["value"] = hashrate
+		} else {
+			temp["value"] = int64(0)
+		}
+		origin = origin - 3600
+		j++
+		chartdata = append(chartdata, temp)
+	}
+
+	return chartdata, nil
+}
+
 // Try to convert all numeric strings to int64
 func convertStringMap(m map[string]string) map[string]interface{} {
 	result := make(map[string]interface{})
