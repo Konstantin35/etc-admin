@@ -1,8 +1,11 @@
 package storage
 
 import (
+	"errors"
+	"github.com/cihub/seelog"
 	"gopkg.in/mgo.v2"
 	"gopkg.in/mgo.v2/bson"
+	"reflect"
 	"strings"
 	"time"
 )
@@ -17,12 +20,12 @@ type admin struct {
 	Password string `bson:"password"`
 }
 type UserInfo struct {
-	UserAccount string  `bson:"account"`
-	Wallet      string  `bson:"walletAddress"`
-	Fee         float64 `bson:"fee"`
-	Phone       int64   `bson:"phone"`
-	Email       string  `bson:"email"`
-	Vip         int     `bson:"vip"`
+	UserAccount string  `bson:"account" json:"account"`
+	Wallet      string  `bson:"walletAddress" json:"walletAddress"`
+	Fee         float64 `bson:"fee" json:"fee"`
+	Phone       string  `bson:"phone" json:"phone"`
+	Email       string  `bson:"email" json:"email"`
+	Vip         int     `bson:"vip" json:"vip"`
 }
 
 type offLine struct {
@@ -63,14 +66,14 @@ func CheckUserAdmin(user string, pwd string, cfg MongoConfig) bool {
 }
 
 //GetUserInfo get user info by user account or wallet address or phonenumer or email
-func GetUserInfo(key string, value string, vip int, cfg MongoConfig) []UserInfo {
+func GetUserInfo(key string, value string, cfg MongoConfig) []UserInfo {
 	//TODO insert user info when user log in at first time
 	connect(cfg)
 	defer curSession.Close()
 
 	infos := []UserInfo{}
 	value = strings.ToLower(value)
-	selector := bson.M{key: value, "vip": vip}
+	selector := bson.M{key: value}
 
 	db := curSession.DB("etc_pool")
 	collection := db.C("user_info")
@@ -96,4 +99,71 @@ func GetOnlineStat(wallet string, cfg MongoConfig) string {
 		return offlineInfo.Time
 	}
 	return ""
+}
+
+//SetUserInfo set user fee , phone, email and so on
+func SetUserInfo(info UserInfo, cfg MongoConfig) error {
+	connect(cfg)
+	defer curSession.Close()
+
+	selector := bson.M{}
+
+	if info.UserAccount != "" {
+		selector["account"] = info.UserAccount
+	} else if info.Wallet != "" {
+		selector["walletAddress"] = info.Wallet
+	} else {
+		seelog.Info("cannot find useraccount or wallet as set idex")
+		return errors.New("cannot find useraccount or wallet as set index")
+	}
+	setdata := bson.M{}
+
+	val := reflect.ValueOf(&info).Elem()
+
+	for i := 0; i < val.NumField(); i++ {
+		if val.Type().Field(i).Tag.Get("json") == "account" || val.Type().Field(i).Tag.Get("json") == "walletAddress" {
+			continue
+		}
+		setdata[val.Type().Field(i).Tag.Get("json")] = val.Field(i).Interface()
+	}
+	setter := bson.M{"$set": setdata}
+
+	db := curSession.DB("etc_pool")
+	collection := db.C("user_info")
+	changeinfo, err := collection.UpdateAll(selector, setter)
+	seelog.Info("change info:", changeinfo)
+	if err != nil {
+		seelog.Error("set user info error:", err)
+		return err
+	}
+	return nil
+}
+
+//SetFee use for settin common users fee or vip users fee
+func SetFee(fee float64, vip int, cfg MongoConfig) error {
+	connect(cfg)
+	defer curSession.Close()
+
+	selector := bson.M{}
+	setdata := bson.M{}
+	if vip == 1 { //set all vip user's fee
+		selector["vip"] = 1
+		setdata["fee"] = fee
+	} else if vip == 0 { //set all normall user's fee
+		selector["vip"] = 0
+		setdata["fee"] = fee
+	} else {
+		return errors.New("error vip flag")
+	}
+
+	setter := bson.M{"$set": setdata}
+	db := curSession.DB("etc_pool")
+	collection := db.C("user_info")
+	changeinfo, err := collection.UpdateAll(selector, setter)
+	seelog.Info("change info:", changeinfo)
+	if err != nil {
+		seelog.Error("change fee error:", err)
+		return err
+	}
+	return nil
 }
