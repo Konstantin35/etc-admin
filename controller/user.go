@@ -48,6 +48,10 @@ func QueryUsers(res http.ResponseWriter, req *http.Request) {
 
 	querykey := regexpParam(param)
 	basicInfo := storage.GetUserInfo(querykey, param, Conf.Mongo)
+	if len(basicInfo) == 0 {
+		res.WriteHeader(http.StatusBadRequest)
+		return
+	}
 	allUserInfo := make([]userAllInfo, len(basicInfo))
 	for idx, basic := range basicInfo {
 		allUserInfo[idx].BasicInfo = basic
