@@ -15,10 +15,11 @@ func init() {
 	Routes.HandleFunc("/main/poolchart", controller.PoolChartData).Methods("GET", "OPTIONS")
 	Routes.HandleFunc("/main/statistic", controller.StatisticData).Methods("GET", "OPTIONS")
 	/****************routers for user manage********************/
-	Routes.HandleFunc("/user/query/{value}/{vip}", controller.QueryUsers).Methods("GET", "OPTIONS") //query by wallet address or login account or email or phone number
-	Routes.HandleFunc("/user/info/settings", controller.SetUserInfo).Methods("PUT")
-	Routes.HandleFunc("/user/walletaddress/data/chart", controller.GetAddressChartData).Methods("GET", "OPTIONS")
-	Routes.HandleFunc("/user/walletaddress/data/benefit", controller.GetAddressBenefitData).Methods("GET", "OPTIONS")
-	Routes.HandleFunc("/user/walletaddress/info/miners", controller.GetMinersInfo).Methods("GET", "OPTIONS")
-	Routes.HandleFunc("/user/walletaddress/history/payment", controller.QueryPayment).Methods("GET", "OPTIONS")
+	Routes.HandleFunc("/user/query/{value}", controller.QueryUsers).Methods("GET", "OPTIONS") //query by wallet address or login account or email or phone number
+	Routes.HandleFunc("/user/info/user/settings", controller.SetUserInfo).Methods("PUT")
+	Routes.HandleFunc("/user/info/common/settings/{vip}", controller.SetFee).Methods("PUT") //set common user and vip user pool fee
+	Routes.HandleFunc("/user/data/chart/{address:0x[0-9a-fA-F]{40}}", controller.GetAddressChartData).Methods("GET", "OPTIONS")
+	Routes.HandleFunc("/user/data/statistic/{address:0x[0-9a-fA-F]{40}}", controller.GetAddressStaticData).Methods("GET", "OPTIONS")
+	Routes.HandleFunc("/user/info/miners/{address:0x[0-9a-fA-F]{40}}", controller.GetMinersInfo).Methods("GET", "OPTIONS")
+	Routes.HandleFunc("/user/history/payment/{address:0x[0-9a-fA-F]{40}}", controller.QueryPaymentHistory).Methods("GET", "OPTIONS")
 }

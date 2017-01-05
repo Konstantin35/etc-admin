@@ -1,6 +1,7 @@
 package storage
 
 import (
+	"fmt"
 	"github.com/cihub/seelog"
 	"gopkg.in/redis.v3"
 	"math/big"
@@ -20,6 +21,23 @@ type RedisClient struct {
 	client *redis.Client
 	prefix string
 }
+
+type Miner struct {
+	LastBeat  int64 `json:"lastBeat"`
+	HR        int64 `json:"hr"`
+	Offline   bool  `json:"offline"`
+	startedAt int64
+}
+
+type Worker struct {
+	Miner
+	TotalHR int64 `json:"hr2"`
+}
+
+const (
+	smallWindow string = "30m"
+	largeWindow string = "3h"
+)
 
 func (r *RedisClient) formatKey(args ...interface{}) string {
 	return join(r.prefix, join(args...))
@@ -151,6 +169,87 @@ func (r *RedisClient) GetRevenue(wallet string) (last int64, total int64) {
 	return
 }
 
+func (r *RedisClient) GetWalletRevenue(wallet string) map[string]interface{} {
+	tx := r.client.Multi()
+	defer tx.Close()
+
+	var retvalue = make(map[string]interface{})
+	cmds, err := tx.Exec(func() error {
+		tx.HGetAllMap(r.formatKey("miners", wallet))
+		tx.ZRevRangeWithScores(r.formatKey("payments", wallet), 0, 1)
+		return nil
+	})
+
+	if err != nil && err != redis.Nil {
+		seelog.Info("get revenue error:", err)
+		return nil
+	} else {
+		result, _ := cmds[0].(*redis.StringStringMapCmd).Result()
+		retvalue = convertStringMap(result)
+		payments := convertPaymentsResults(cmds[1].(*redis.ZSliceCmd))
+		retvalue["lastPaid"] = payments[0]["amount"].(int64)
+	}
+
+	return retvalue
+}
+
+//GetAccountChartValues get account 24h hashrate for chart, timestamp from recent integer time clock
+func (r *RedisClient) GetAccountChartValues(login string) ([]map[string]interface{}, error) {
+	timenow := time.Now()
+
+	var chartdata []map[string]interface{}
+	cmd := r.client.LRange(r.formatKey("chart", "hashrate", login), 0, -1)
+	if cmd.Err() != nil && cmd.Err() != redis.Nil {
+		return chartdata, cmd.Err()
+	}
+	idx := 0
+	stringArray, _ := cmd.Result()
+	for index, subvalue := range stringArray {
+		substr := strings.Split(subvalue, "=")
+		t, _ := time.Parse("2006-01-02 15:04:05", substr[0])
+		duration := timenow.Unix() - t.Unix()
+		if duration > 86400 {
+			idx = index
+			break
+		}
+		if index == 23 {
+			idx = index + 1
+		}
+	}
+
+	//get now interfer time
+	origin := time.Now().Local().Unix()
+	j := 0
+	for i := 0; i < 24; i++ {
+		temp := make(map[string]interface{})
+		timestamp := time.Unix(origin, 0).Format("2006-01-02 15:00:00")
+		temp["tempstamp"] = timestamp
+		if j < idx {
+			substr := strings.Split(stringArray[j], "=")
+			hashrate, _ := strconv.ParseInt(substr[1], 10, 64)
+			temp["value"] = hashrate
+		} else {
+			temp["value"] = int64(0)
+		}
+		origin = origin - 3600
+		j++
+		chartdata = append(chartdata, temp)
+	}
+
+	return chartdata, nil
+}
+
+func (r *RedisClient) GetWorkersStats(address string) map[string]interface{} {
+	small, _ := time.ParseDuration(smallWindow)
+	large, _ := time.ParseDuration(largeWindow)
+	stats, err := r.collectWorkerStats(small, large, address)
+	if err != nil {
+		seelog.Error("get worker stats error:", err)
+		return nil
+	}
+	return stats
+}
+
 // Try to convert all numeric strings to int64
 func convertStringMap(m map[string]string) map[string]interface{} {
 	result := make(map[string]interface{})
@@ -181,4 +280,102 @@ func convertPaymentsResults(raw *redis.ZSliceCmd) []map[string]interface{} {
 		result = append(result, tx)
 	}
 	return result
+}
+
+func (r *RedisClient) collectWorkerStats(sWindow, lWindow time.Duration, login string) (map[string]interface{}, error) {
+	smallWindow := int64(sWindow / time.Second)
+	largeWindow := int64(lWindow / time.Second)
+	stats := make(map[string]interface{})
+
+	tx := r.client.Multi()
+	defer tx.Close()
+
+	now := MakeTimestamp() / 1000
+
+	cmds, err := tx.Exec(func() error {
+		tx.ZRemRangeByScore(r.formatKey("hashrate", login), "-inf", fmt.Sprint("(", now-largeWindow))
+		tx.ZRangeWithScores(r.formatKey("hashrate", login), 0, -1)
+		return nil
+	})
+
+	if err != nil {
+		return nil, err
+	}
+
+	totalHashrate := int64(0)
+	currentHashrate := int64(0)
+	online := int64(0)
+	offline := int64(0)
+	workers := convertWorkersStats(smallWindow, cmds[1].(*redis.ZSliceCmd))
+
+	for id, worker := range workers {
+		timeOnline := now - worker.startedAt
+		if timeOnline < 600 {
+			timeOnline = 600
+		}
+
+		boundary := timeOnline
+		if timeOnline >= smallWindow {
+			boundary = smallWindow
+		}
+		worker.HR = worker.HR / boundary
+
+		boundary = timeOnline
+		if timeOnline >= largeWindow {
+			boundary = largeWindow
+		}
+		worker.TotalHR = worker.TotalHR / boundary
+
+		if worker.LastBeat < (now - smallWindow/2) {
+			worker.Offline = true
+			offline++
+		} else {
+			online++
+		}
+
+		currentHashrate += worker.HR
+		totalHashrate += worker.TotalHR
+		workers[id] = worker
+	}
+	stats["workers"] = workers
+	stats["workersTotal"] = len(workers)
+	stats["workersOnline"] = online
+	stats["workersOffline"] = offline
+	stats["hashrate"] = totalHashrate
+	stats["currentHashrate"] = currentHashrate
+	return stats, nil
+}
+
+func MakeTimestamp() int64 {
+	return time.Now().UnixNano() / int64(time.Millisecond)
+}
+
+func convertWorkersStats(window int64, raw *redis.ZSliceCmd) map[string]Worker {
+	now := MakeTimestamp() / 1000
+	workers := make(map[string]Worker)
+
+	for _, v := range raw.Val() {
+		parts := strings.Split(v.Member.(string), ":")
+		share, _ := strconv.ParseInt(parts[0], 10, 64)
+		id := parts[1]
+		score := int64(v.Score)
+		worker := workers[id]
+
+		// Add for large window
+		worker.TotalHR += share
+
+		// Add for small window if matches
+		if score >= now-window {
+			worker.HR += share
+		}
+
+		if worker.LastBeat < score {
+			worker.LastBeat = score
+		}
+		if worker.startedAt > score || worker.startedAt == 0 {
+			worker.startedAt = score
+		}
+		workers[id] = worker
+	}
+	return workers
 }
