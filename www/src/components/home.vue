@@ -1,8 +1,8 @@
 <template>
 	<div class="home container">
 	  <chart :type="'line'" :data="seriesData" :options="options"></chart>
-    <div class="pool-stats">
-      <h2>矿池状态概览</h2>
+    <div class="pool-stats pool-panel">
+      <h1>矿池状态概览</h1>
       <ul>
         <li><p>矿池当前算力: <span>{{hashrate}} </span></p></li>
         <li><p>活跃用户数: <span>{{minersTotal}}</span></p></li>
@@ -147,11 +147,14 @@ export default {
 </script>
 
 <style type="text/css">
+canvas.chartjs{
+  margin-top: 20px;
+  background-color: #fff;
+}
 .pool-stats {
-  margin-top: 40px;
   margin-bottom: 40px;
 }
-.pool-stats h2{
+.pool-stats h1{
   text-align: center;
 }
 .pool-stats ul{
