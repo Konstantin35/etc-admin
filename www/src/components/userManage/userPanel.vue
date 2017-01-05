@@ -53,6 +53,12 @@ import walletPanel from './walletPanel.vue'
 				this.user.eamil = this.eamil
 				this.updateData()
 			}
+		},
+		watch: {
+			user(newVal){
+				this.tel = this.user.tel
+			  this.email = this.user.email
+			}
 		}
 	}
 </script>

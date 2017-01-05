@@ -44,6 +44,11 @@
 				// this.updateData()
 				this.edit = false
 			}
+		},
+		watch: {
+			wallet(newVal){
+				this.cacheFee = this.wallet.fee
+			}
 		}
 	}
 </script>

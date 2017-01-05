@@ -20,14 +20,16 @@
 	 
 	  <div class="query-set pool-panel">
 	  	<h1>查询&amp;设置</h1>
-	  	<form class="query-form">
+	  	<form class="query-form" name="queryUser" autocomplete="off" @submit.prevent="queryUser">
 	  		<input type="text" name="queryPara" placeholder="用户名/钱包地址/电话号码/邮箱" v-model="queryPara" />
-  			<a class="history" :class="{'open':openHistory}" @click="open"><span class="cart"></span>
+  			<a class="history" :class="{'open':openHistory}" @click="open" @mouseover="willopen" @mouseout="willclose" ><span class="cart"></span>
 	  			<ul>
-	  				<li v-for="item in queryHistory">{{item}}<a class="delete"></a></li>
+	  				<li v-for="(item,index) in queryHistory" @click="selectItem(index)">{{item}}
+	  				  <a class="delete" @click.stop="deleteItem(index)">delete</a>
+	  				</li>
 	  			</ul>
   			</a>
-	  		<input type="submit" value="queryUser" method="get" :action="config.BTCC.PM_APIHOST + '/'" />
+	  		<input type="submit" value="查询" />
 	  	</form>
 
 	  	<div class="query-result">
@@ -48,13 +50,19 @@ import userPanel from './userPanel.vue'
 			userPanel: userPanel
 		},
 		data(){return{
+			//view
 			edit: false,
-			openHistory: false,
 			cacheFee: 0,
 			cacheVipFee: 0,
+			openHistory: false,
+			closeTimeout: 0,
+
 
 			//localStorage
 			queryHistory:[],
+
+			//api
+			queryPara: '',
 			
 			//data
 			Fee: 1.5,
@@ -132,8 +140,78 @@ import userPanel from './userPanel.vue'
 			]
 		}},
 		methods:{
+			queryUser(){
+		    var header = new Headers({ 'Json-Web-Token' : localStorage.getItem( config.BTCC.PM_JWT ) })
+		    fetch(config.BTCC.PM_APIHOST + 'user/query/' + this.queryPara,{ headers : header })
+		    .then(resp => {
+		      if(resp.status === 403) this.$router.replace('/')
+		      if(resp.ok){
+		      	if(!this.queryHistory.some(el => el === this.queryPara)){
+				      this.queryHistory.push(this.queryPara)
+				      localStorage.setItem(config.BTCC.PM_QUERY_HISTORY,this.queryHistory)
+		      	}
+		        return resp.json()
+		      }
+		    })
+		    .then(json => {
+		    	console.log(json)
+		    	this.userFormat(json)
+		    })
+			},
+			userFormat(data){
+				var users = []
+				data.forEach(el => {
+					var user = {
+						name: el.BasicInfo.account,
+						tel: el.BasicInfo.phone,
+						email: el.BasicInfo.email,
+						wallet: []
+					}
+					var wallet = {
+						address: el.BasicInfo.walletAddress,
+						fee: el.BasicInfo.fee,
+						lastBanefit: el.LastRevenue,
+						totalBanefit: el.AllRevenue,
+						stats: !!el.OfflineTime ? '离线' : '在线',
+						offLineTime: el.offLineTime
+					}
+
+					var index = 0
+
+					if(!users.some( (el,i) => {
+						if(el.name === user.name){
+							users[i].wallet.push(wallet)
+							return true
+						}
+						index=i
+						return false
+					})){
+					  users.push(user)
+					  users[index].wallet.push(wallet)
+					}
+				})
+
+			  this.users = users
+			},
 			editClick(){
 				this.edit = true
+			},
+			open(){
+				this.openHistory = !this.openHistory
+			},
+			willopen(){
+				clearTimeout(this.closeTimeout)
+			},
+			willclose(){
+				clearTimeout(this.closeTimeout)
+				this.closeTimeout = setTimeout(() => this.openHistory = false, 1000)
+			},
+			selectItem(index){
+				this.queryPara = this.queryHistory[index]
+			},
+			deleteItem(index){
+				this.queryHistory.splice(index,1)
+				localStorage.setItem(config.BTCC.PM_QUERY_HISTORY,this.queryHistory)
 			},
 			canselClick(){
 				this.edit = false
@@ -149,14 +227,12 @@ import userPanel from './userPanel.vue'
 				this.cacheFee = this.Fee
 				this.cacheVipFee = this.VipFee
 				this.edit = false
+				this.queryHistory = localStorage.getItem(config.BTCC.PM_QUERY_HISTORY).split(',')
+				this.queryPara = this.queryHistory[this.queryHistory.length-1]
 			},
-			open(){
-				this.openHistory = !this.openHistory
-			}
 		},
 		created(){
 			this.init()
-			setInterval(()=>{console.log(this.users[0].tel,this.users[0].wallet[0].fee)},1000)
 		}
 	}
 </script>
@@ -194,8 +270,9 @@ p.unsave-warning{
     width: 100px;
     background-color: transparent;
 }
-.userManage input[name="queryPara"]{ 
-	width: 300px;
+.userManage input[name="queryPara"]{
+  width: 400px;
+  font-size: 14px;
   border: 1px solid #ccc;
   float: left;
   border-top-left-radius: 5px;
@@ -252,11 +329,24 @@ form.query-form {
     margin-top: 2px;
     border-radius: 5px;
     z-index: 1;
-    padding-left: 10px;
-    padding-right: 10px;
 }
 .history ul li{
 	font-size: 12px;
+	min-width: 300px;
+	text-align: left;
+  padding-left: 10px;
+  padding-right: 10px;
+}
+.history ul li:hover{
+	background-color: #f1f2f3;
+}
+a.delete {
+  float: right;
+  color: #19a8f7;
+  text-decoration: underline;
+}
+a.delete:hover{
+	font-weight: 600;
 }
 .open ul{
 	display: block;
