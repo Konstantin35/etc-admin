@@ -193,6 +193,19 @@ func GetAddressStaticData(res http.ResponseWriter, req *http.Request) {
 		res.WriteHeader(http.StatusForbidden)
 		return
 	}
+
+	address := mux.Vars(req)["address"]
+	address = strings.ToLower(strings.TrimSpace(address))
+	data := Backend.GetWalletRevenue(address)
+	if data == nil {
+		res.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	res.WriteHeader(http.StatusOK)
+	err = json.NewEncoder(res).Encode(data)
+	if err != nil {
+		seelog.Info("serializing response data error:", err)
+	}
 }
 
 //GetMinersInfo get miner state about online offline and its hashrate data

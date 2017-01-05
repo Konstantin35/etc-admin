@@ -151,6 +151,30 @@ func (r *RedisClient) GetRevenue(wallet string) (last int64, total int64) {
 	return
 }
 
+func (r *RedisClient) GetWalletRevenue(wallet string) map[string]interface{} {
+	tx := r.client.Multi()
+	defer tx.Close()
+
+	var retvalue = make(map[string]interface{})
+	cmds, err := tx.Exec(func() error {
+		tx.HGetAllMap(r.formatKey("miners", wallet))
+		tx.ZRevRangeWithScores(r.formatKey("payments", wallet), 0, 1)
+		return nil
+	})
+
+	if err != nil && err != redis.Nil {
+		seelog.Info("get revenue error:", err)
+		return nil
+	} else {
+		result, _ := cmds[0].(*redis.StringStringMapCmd).Result()
+		retvalue = convertStringMap(result)
+		payments := convertPaymentsResults(cmds[1].(*redis.ZSliceCmd))
+		retvalue["lastPaid"] = payments[0]["amount"].(int64)
+	}
+
+	return retvalue
+}
+
 //GetAccountChartValues get account 24h hashrate for chart, timestamp from recent integer time clock
 func (r *RedisClient) GetAccountChartValues(login string) ([]map[string]interface{}, error) {
 	timenow := time.Now()
