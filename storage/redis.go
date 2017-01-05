@@ -183,12 +183,11 @@ func (r *RedisClient) GetWalletRevenue(wallet string) map[string]interface{} {
 	if err != nil && err != redis.Nil {
 		seelog.Info("get revenue error:", err)
 		return nil
-	} else {
-		result, _ := cmds[0].(*redis.StringStringMapCmd).Result()
-		retvalue = convertStringMap(result)
-		payments := convertPaymentsResults(cmds[1].(*redis.ZSliceCmd))
-		retvalue["lastPaid"] = payments[0]["amount"].(int64)
 	}
+	result, _ := cmds[0].(*redis.StringStringMapCmd).Result()
+	retvalue = convertStringMap(result)
+	payments := convertPaymentsResults(cmds[1].(*redis.ZSliceCmd))
+	retvalue["lastPaid"] = payments[0]["amount"].(int64)
 
 	return retvalue
 }
@@ -239,15 +238,53 @@ func (r *RedisClient) GetAccountChartValues(login string) ([]map[string]interfac
 	return chartdata, nil
 }
 
-func (r *RedisClient) GetWorkersStats(address string) map[string]interface{} {
+func (r *RedisClient) GetWorkersStats(address string) (map[string]interface{}, error) {
 	small, _ := time.ParseDuration(smallWindow)
 	large, _ := time.ParseDuration(largeWindow)
 	stats, err := r.collectWorkerStats(small, large, address)
 	if err != nil {
 		seelog.Error("get worker stats error:", err)
+		return nil, err
+	}
+	return stats, nil
+}
+
+//GetPaymentHistory get a time duration payment records, if you dont give any date, it will return all payments records
+func (r *RedisClient) GetPaymentHistory(address string, begin, end int64) []map[string]interface{} {
+	// payments := r.getPayments(address)
+	tx := r.client.Multi()
+	defer tx.Close()
+
+	cmds, err := tx.Exec(func() error {
+		tx.ZRevRangeWithScores(r.formatKey("payments", address), 0, -1)
+		return nil
+	})
+
+	if err != nil && err != redis.Nil {
+		seelog.Info("get paymens error:", err)
 		return nil
 	}
-	return stats
+	payments := convertPaymentsResults(cmds[0].(*redis.ZSliceCmd))
+	seelog.Info("raw payments data:", payments)
+
+	if begin == -1 && end == -1 { //get all records
+		return payments
+	}
+	length := len(payments)
+	if payments[0]["timestamp"].(int64) > end || payments[length-1]["timestamp"].(int64) < begin {
+		return nil
+	}
+
+	index := 0
+	for idx, val := range payments {
+		stamp := val["timestamp"].(int64)
+		if stamp >= begin && stamp <= end {
+			continue
+		}
+		index = idx
+		break
+	}
+	return payments[0:index]
 }
 
 // Try to convert all numeric strings to int64
@@ -266,6 +303,7 @@ func convertStringMap(m map[string]string) map[string]interface{} {
 func convertPaymentsResults(raw *redis.ZSliceCmd) []map[string]interface{} {
 	var result []map[string]interface{}
 	for _, v := range raw.Val() {
+		seelog.Info("every data:", v.Score)
 		tx := make(map[string]interface{})
 		tx["timestamp"] = int64(v.Score)
 		fields := strings.Split(v.Member.(string), ":")
