@@ -21,5 +21,5 @@ func init() {
 	Routes.HandleFunc("/user/data/chart/{address:0x[0-9a-fA-F]{40}}", controller.GetAddressChartData).Methods("GET", "OPTIONS")
 	Routes.HandleFunc("/user/data/statistic/{address:0x[0-9a-fA-F]{40}}", controller.GetAddressStaticData).Methods("GET", "OPTIONS")
 	Routes.HandleFunc("/user/info/miners/{address:0x[0-9a-fA-F]{40}}", controller.GetMinersInfo).Methods("GET", "OPTIONS")
-	Routes.HandleFunc("/user/history/payment/{address:0x[0-9a-fA-F]{40}}", controller.QueryPaymentHistory).Methods("GET", "OPTIONS")
+	Routes.HandleFunc("/user/history/payment/{address:0x[0-9a-fA-F]{40}}/{begintime}/{endtime}", controller.QueryPaymentHistory).Methods("GET", "OPTIONS")
 }

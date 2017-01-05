@@ -228,8 +228,8 @@ func GetMinersInfo(res http.ResponseWriter, req *http.Request) {
 
 	address := mux.Vars(req)["address"]
 	address = strings.ToLower(strings.TrimSpace(address))
-	stats := Backend.GetWorkersStats(address)
-	if stats == nil {
+	stats, err := Backend.GetWorkersStats(address)
+	if err != nil {
 		seelog.Info("cannot get worker stats")
 		res.WriteHeader(http.StatusInternalServerError)
 		return
@@ -256,6 +256,29 @@ func QueryPaymentHistory(res http.ResponseWriter, req *http.Request) {
 		seelog.Info("validate err:", err)
 		res.WriteHeader(http.StatusForbidden)
 		return
+	}
+
+	address := mux.Vars(req)["address"]
+	begin := mux.Vars(req)["begintime"]
+	end := mux.Vars(req)["endtime"]
+	address = strings.ToLower(strings.TrimSpace(address))
+	btime, err := strconv.ParseInt(begin, 10, 64)
+	if err != nil {
+		seelog.Info("convert string time to int error:", err)
+	}
+	etime, err := strconv.ParseInt(end, 10, 64)
+	if err != nil {
+		seelog.Info("convert string time to int error:", err)
+	}
+
+	res.WriteHeader(http.StatusOK)
+	payments := Backend.GetPaymentHistory(address, btime, etime)
+	if payments == nil {
+		seelog.Info("no corresponding payments data")
+	}
+	err = json.NewEncoder(res).Encode(payments)
+	if err != nil {
+		seelog.Info("serializing payments history response data error:", err)
 	}
 }
 
