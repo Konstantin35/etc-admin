@@ -225,6 +225,20 @@ func GetMinersInfo(res http.ResponseWriter, req *http.Request) {
 		res.WriteHeader(http.StatusForbidden)
 		return
 	}
+
+	address := mux.Vars(req)["address"]
+	address = strings.ToLower(strings.TrimSpace(address))
+	stats := Backend.GetWorkersStats(address)
+	if stats == nil {
+		seelog.Info("cannot get worker stats")
+		res.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	res.WriteHeader(http.StatusOK)
+	err = json.NewEncoder(res).Encode(stats)
+	if err != nil {
+		seelog.Info("serializing response data error:", err)
+	}
 }
 
 func QueryPaymentHistory(res http.ResponseWriter, req *http.Request) {
