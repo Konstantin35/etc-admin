@@ -1,7 +1,12 @@
 <template>
 <div class="user-panel">
 	<ul>
-		<li><h3>用户名:{{user.name}}</h3></li>
+		<li>
+			<h3>用户名: 
+			  <span v-if="user.name !== '未注册'">{{user.name}}</span>
+			  <span style="color:#f12345" v-else>{{user.name}}</span>
+			</h3>
+		</li>
 		<template v-if="!edit">
 			<li>电话: <span>{{tel}}</span></li>
 			<li>Email: <span>{{email}}</span></li>
@@ -50,8 +55,7 @@ import walletPanel from './walletPanel.vue'
 			saveClick(){
 				this.edit = false
 				this.user.tel = this.tel
-				this.user.eamil = this.eamil
-				this.updateData()
+				this.user.email = this.email
 			}
 		},
 		watch: {

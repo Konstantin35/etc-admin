@@ -5,8 +5,8 @@
 		<ul class="wallet stats" >
 			<li v-if="!edit">费率: <span>{{cacheFee}}</span> %</li>
 			<li v-else>费率: <input type="text" name="walletFee" v-model="cacheFee"> %</li>
-			<li>上次收益: <span>{{wallet.lastBanefit}} ETC</span></li>
-			<li>总收益: <span>{{wallet.totalBanefit}} ETC</span></li>
+			<li>上次收益: <span>{{wallet.lastBanefit}}</span></li>
+			<li>总收益: <span>{{wallet.totalBanefit}}</span></li>
 			<li>状态: <span>{{wallet.stats}}</span></li>
 			<li v-show="wallet.stats === '离线'">离线时间: <span>{{wallet.offLineTime}}</span></li>
 			<a class="edit" v-if="!edit" @click="editClick">编辑</a>

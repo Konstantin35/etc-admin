@@ -45,6 +45,8 @@
 <script type="text/javascript">
 import config from '../../../config'
 import userPanel from './userPanel.vue'
+import formatUserinfo from '../../utils/formatUserinfo'
+
 	export default{
 		components:{
 			userPanel: userPanel
@@ -144,7 +146,6 @@ import userPanel from './userPanel.vue'
 		    var header = new Headers({ 'Json-Web-Token' : localStorage.getItem( config.BTCC.PM_JWT ) })
 		    fetch(config.BTCC.PM_APIHOST + 'user/query/' + this.queryPara,{ headers : header })
 		    .then(resp => {
-		    	// console.log('resp',resp)
 		      if(resp.status === 403) this.$router.replace('/')
 		      if(resp.ok){
 		      	if(!this.queryHistory.some(el => el === this.queryPara)){
@@ -155,46 +156,11 @@ import userPanel from './userPanel.vue'
 		      return resp.json()
 		    })
 		    .then(json => {
-		    	this.userFormat(json)
+		    	this.users = formatUserinfo(json)
 		    })
 		    .catch(err => {
-		    	// console.log(err)
+		    	console.log(err)
 		    })
-			},
-			userFormat(data){
-				var users = []
-				data.forEach(el => {
-					var user = {
-						name: el.BasicInfo.account,
-						tel: el.BasicInfo.phone,
-						email: el.BasicInfo.email,
-						wallet: []
-					}
-					var wallet = {
-						address: el.BasicInfo.walletAddress,
-						fee: el.BasicInfo.fee,
-						lastBanefit: el.LastRevenue,
-						totalBanefit: el.AllRevenue,
-						stats: !!el.OfflineTime ? '离线' : '在线',
-						offLineTime: el.offLineTime
-					}
-
-					var index = 0
-
-					if(!users.some( (el,i) => {
-						if(el.name === user.name){
-							users[i].wallet.push(wallet)
-							return true
-						}
-						index=i
-						return false
-					})){
-					  users.push(user)
-					  users[index].wallet.push(wallet)
-					}
-				})
-
-			  this.users = users
 			},
 			editClick(){
 				this.edit = true
@@ -284,7 +250,9 @@ p.unsave-warning{
 .userManage input[name="queryPara"]:focus{
 	outline: -webkit-focus-ring-color auto 5px;
 }
-.userManage input[name="tel"],.userManage input[name="email"]{ width: 150px; }
+.userManage input[name="tel"],.userManage input[name="email"]{ font-size: 14px; }
+.userManage input[name="tel"]{ width: 160px; }
+.userManage input[name="email"]{ width: 200px; }
 
 .fee-set ul {
     margin-top: 20px;

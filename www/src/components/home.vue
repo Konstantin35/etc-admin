@@ -15,6 +15,8 @@
 <script type="text/javascript">
 import Chart from 'vue-bulma-chartjs'
 import config from '../../config'
+import formatHashrate from '../utils/formatHashrate'
+import formatEtc from '../utils/formatEtc'
 
 export default {
   components: {
@@ -42,21 +44,7 @@ export default {
       tooltips:{
         callbacks:{
           label(item,data){
-            var y = item.yLabel
-            var len = Math.round(y).toString().length;
-            var Y = ''
-            if(len > 12){
-              Y = (y/Math.pow(10,12)).toFixed(2) + ' TH/s';
-            }else if(len >9){
-              Y = (y/Math.pow(10,9)).toFixed(2) + ' GH/s';
-            }else if(len >6){
-              Y = (y/Math.pow(10,6)).toFixed(2) + ' MH/s';
-            }else if(len > 3){
-              Y = (y/Math.pow(10,3)).toFixed(2) + ' KH/s';
-            }else{
-              Y = 0 + ' KH/s';
-            }
-            return data.datasets[0].label + ' : ' + Y
+            return data.datasets[0].label + ' : ' + formatHashrate(item.yLabel) + '/s'
           }
         }
       },
@@ -77,20 +65,7 @@ export default {
           ticks:{
             beginAtZero: true,
             callback(value,index,values){
-              var len = Math.round(value).toString().length;
-              var Y = ''
-              if(len > 12){
-                Y = (value/Math.pow(10,12)).toFixed(0) + ' TH';
-              }else if(len >9){
-                Y = (value/Math.pow(10,9)).toFixed(0) + ' GH';
-              }else if(len >6){
-                Y = (value/Math.pow(10,6)).toFixed(0) + ' MH';
-              }else if(len > 3){
-                Y = (value/Math.pow(10,3)).toFixed(0) + ' KH';
-              }else{
-                Y = 0 + ' KH';
-              }
-              return Y
+              return formatHashrate(value)
             }
           }
         }]
@@ -138,10 +113,9 @@ export default {
       return resp.json()
     })
     .then(json => {
-      //need format
-      this.hashrate = json.hashrate
+      this.hashrate = formatHashrate(json.hashrate)
       this.minersTotal = json.minersTotal
-      this.poolbalance = json.poolbalance
+      this.poolbalance = formatEtc(json.poolbalance)
     })
     .catch(err => {})
   }
