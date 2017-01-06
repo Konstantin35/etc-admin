@@ -21,7 +21,7 @@
 		</template>
 	</ul>
 	<template v-for="(wallet,windex) in user.wallet">
-		<wallet-panel :wallet="wallet" :index="windex" />
+		<wallet-panel :wallet="wallet" :uindex="index" :windex="windex" :update-data="updateData" />
 	</template>
 </div>
 </template>

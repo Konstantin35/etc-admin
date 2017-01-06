@@ -34,7 +34,7 @@
 
 	  	<div class="query-result">
 	  	  <template v-for="(user,$index) in users">
-	  		  <user-panel  :user="user" :index="$index" />
+	  		  <user-panel  :user="user" :index="$index" :update-data="updateData" />
 	  	  </template>
 	  	</div>
 	  </div>
@@ -74,6 +74,7 @@ import formatUserinfo from '../../utils/formatUserinfo'
 					name: 'world',
 					tel: '1244235',
 					email: '123141421',
+					vip: 0,
 					wallet:[
 					{
 						address: '1231453466236435345',
@@ -97,6 +98,7 @@ import formatUserinfo from '../../utils/formatUserinfo'
 					name: 'hello',
 					tel: '1244235',
 					email: '123141421',
+					vip: 0,
 					wallet:[
 						{
 							address: '1231453466236435345',
@@ -120,6 +122,7 @@ import formatUserinfo from '../../utils/formatUserinfo'
 					name: 'hello',
 					tel: '1244235',
 					email: '123141421',
+					vip: 0,
 					wallet:[
 						{
 							address: '1231453466236435345',
@@ -157,6 +160,41 @@ import formatUserinfo from '../../utils/formatUserinfo'
 		    })
 		    .then(json => {
 		    	this.users = formatUserinfo(json)
+		    })
+		    .catch(err => {
+		    	console.log(err)
+		    })
+			},
+			updateData(userindex,walletindex){
+			  var header = new Headers({ 'Json-Web-Token' : localStorage.getItem( config.BTCC.PM_JWT ) })
+		    
+		    //1.修改账户信息：传账号 + 相应信息
+		    //2.修改钱包信息：传钱包地址 + 相应信息
+		    //两种情况度需要传phone email vip
+		    var flag = !!(walletindex+1)
+		    var putData = {
+		    	account      : flag ? '' : this.users[userindex].name,
+		    	walletAddress: flag ? this.users[userindex].wallet[walletindex].address : '', 
+		    	fee          : flag ? this.users[userindex].wallet[walletindex].fee : '',
+		    	phone: this.users[userindex].tel,
+		    	email: this.users[userindex].email,
+		    	vip  : this.users[userindex].vip
+		    }
+
+		    // console.log(userindex,walletindex,putData)
+
+		    fetch(config.BTCC.PM_APIHOST + 'user/info/settings',{ 
+		    	method :'PUT',
+		    	headers : header,
+		    	body : JSON.stringify(putData)
+		    })
+		    .then(resp => {
+		      if(resp.status === 403) this.$router.replace('/')
+		      if(resp.ok){
+		        console.log(resp.ok)
+		      }else{
+		        console.log(resp.ok)
+		      }
 		    })
 		    .catch(err => {
 		    	console.log(err)

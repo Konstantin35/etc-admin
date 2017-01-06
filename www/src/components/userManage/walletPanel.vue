@@ -24,7 +24,8 @@
 	export default{
 		props:{
 			wallet: Object,
-			index: Number,
+			uindex: Number,
+			windex: Number,
 			updateData: Function
 		},
 		data(){return{
@@ -40,8 +41,9 @@
 				this.edit = false
 			},
 			saveClick(){
-				this.wallet.fee = this.cacheFee
-				// this.updateData()
+				this.wallet.fee = parseFloat(this.cacheFee)
+				console.log(this.uindex,this.windex)
+				this.updateData(this.uindex,this.windex)
 				this.edit = false
 			}
 		},
