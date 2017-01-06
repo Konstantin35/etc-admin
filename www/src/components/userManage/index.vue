@@ -144,18 +144,21 @@ import userPanel from './userPanel.vue'
 		    var header = new Headers({ 'Json-Web-Token' : localStorage.getItem( config.BTCC.PM_JWT ) })
 		    fetch(config.BTCC.PM_APIHOST + 'user/query/' + this.queryPara,{ headers : header })
 		    .then(resp => {
+		    	// console.log('resp',resp)
 		      if(resp.status === 403) this.$router.replace('/')
 		      if(resp.ok){
 		      	if(!this.queryHistory.some(el => el === this.queryPara)){
 				      this.queryHistory.push(this.queryPara)
 				      localStorage.setItem(config.BTCC.PM_QUERY_HISTORY,this.queryHistory)
 		      	}
-		        return resp.json()
 		      }
+		      return resp.json()
 		    })
 		    .then(json => {
-		    	console.log(json)
 		    	this.userFormat(json)
+		    })
+		    .catch(err => {
+		    	// console.log(err)
 		    })
 			},
 			userFormat(data){

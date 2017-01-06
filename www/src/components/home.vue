@@ -130,6 +130,7 @@ export default {
         this.chartData.push( el.value )
       })
     })
+    .catch(err => {})
 
     fetch(config.BTCC.PM_APIHOST + 'main/statistic',{ headers : header })
     .then(resp => {
@@ -142,6 +143,7 @@ export default {
       this.minersTotal = json.minersTotal
       this.poolbalance = json.poolbalance
     })
+    .catch(err => {})
   }
 }
 </script>

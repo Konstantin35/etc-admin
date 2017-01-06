@@ -82,6 +82,7 @@ export default{
 					this.loginErr = true
 				}
 			})
+			.catch(err => {})
 		},
 		init(){
 			this.isremember = localStorage.getItem(config.BTCC.PM_ISREMEMBER) === 'true'
