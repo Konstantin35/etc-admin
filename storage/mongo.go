@@ -28,6 +28,11 @@ type UserInfo struct {
 	Vip         int     `bson:"vip" json:"vip"`
 }
 
+type FeeInfo struct {
+	Vip  float64 `bson:"vip"`
+	Norm float64 `bson:"normal"`
+}
+
 type offLine struct {
 	Wallet string `bson:"walletAddress"`
 	Time   string `bson:"offlineTime"`
@@ -124,6 +129,9 @@ func SetUserInfo(info UserInfo, cfg MongoConfig) error {
 		if val.Type().Field(i).Tag.Get("json") == "account" || val.Type().Field(i).Tag.Get("json") == "walletAddress" {
 			continue
 		}
+		if selector["account"] != nil && val.Type().Field(i).Tag.Get("json") == "fee" {
+			continue
+		}
 		setdata[val.Type().Field(i).Tag.Get("json")] = val.Field(i).Interface()
 	}
 	setter := bson.M{"$set": setdata}
@@ -139,31 +147,35 @@ func SetUserInfo(info UserInfo, cfg MongoConfig) error {
 	return nil
 }
 
-//SetFee use for settin common users fee or vip users fee
-func SetFee(fee float64, vip int, cfg MongoConfig) error {
+func GetFee(cfg MongoConfig) FeeInfo {
 	connect(cfg)
 	defer curSession.Close()
 
-	selector := bson.M{}
+	fees := FeeInfo{}
+	db := curSession.DB("etc_pool")
+	collection := db.C("fee_info")
+	collection.Find(nil).One(&fees)
+	return fees
+}
+
+//SetFee use for settin common users fee or vip users fee
+func SetFee(fees FeeInfo, cfg MongoConfig) error {
+	connect(cfg)
+	defer curSession.Close()
+
 	setdata := bson.M{}
-	if vip == 1 { //set all vip user's fee
-		selector["vip"] = 1
-		setdata["fee"] = fee
-	} else if vip == 0 { //set all normall user's fee
-		selector["vip"] = 0
-		setdata["fee"] = fee
-	} else {
-		return errors.New("error vip flag")
-	}
+	setdata["normal"] = fees.Norm
+	setdata["vip"] = fees.Vip
 
 	setter := bson.M{"$set": setdata}
 	db := curSession.DB("etc_pool")
-	collection := db.C("user_info")
-	changeinfo, err := collection.UpdateAll(selector, setter)
+	collection := db.C("fee_info")
+	changeinfo, err := collection.UpdateAll(nil, setter)
 	seelog.Info("change info:", changeinfo)
 	if err != nil {
 		seelog.Error("change fee error:", err)
 		return err
 	}
+	//for normal users fee setting
 	return nil
 }

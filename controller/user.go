@@ -48,6 +48,10 @@ func QueryUsers(res http.ResponseWriter, req *http.Request) {
 
 	querykey := regexpParam(param)
 	basicInfo := storage.GetUserInfo(querykey, param, Conf.Mongo)
+	if len(basicInfo) == 0 {
+		res.WriteHeader(http.StatusBadRequest)
+		return
+	}
 	allUserInfo := make([]userAllInfo, len(basicInfo))
 	for idx, basic := range basicInfo {
 		allUserInfo[idx].BasicInfo = basic
@@ -80,7 +84,6 @@ func SetUserInfo(res http.ResponseWriter, req *http.Request) {
 
 	modify := storage.UserInfo{}
 	body, _ := ioutil.ReadAll(req.Body)
-	seelog.Info("data body:", string(body))
 
 	err = json.Unmarshal(body, &modify)
 	if err != nil {
@@ -95,9 +98,6 @@ func SetUserInfo(res http.ResponseWriter, req *http.Request) {
 	// 	res.WriteHeader(http.StatusBadRequest)
 	// 	return
 	// }
-	seelog.Info("after unmarshal:", modify)
-	seelog.Info("json email:", modify.Email)
-	seelog.Info("json wallet:", modify.Wallet)
 	err = storage.SetUserInfo(modify, Conf.Mongo)
 	if err != nil {
 		res.WriteHeader(http.StatusInternalServerError)
@@ -106,14 +106,13 @@ func SetUserInfo(res http.ResponseWriter, req *http.Request) {
 	res.WriteHeader(http.StatusOK)
 }
 
-//SetFee set common users or vip users fee
-func SetFee(res http.ResponseWriter, req *http.Request) {
+func Fee(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/json; charset=UTF-8")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
 
 	if req.Method == http.MethodOptions {
 		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
-		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut+","+http.MethodGet)
 		res.WriteHeader(http.StatusOK)
 		return
 	}
@@ -123,19 +122,42 @@ func SetFee(res http.ResponseWriter, req *http.Request) {
 		res.WriteHeader(http.StatusForbidden)
 		return
 	}
-	vip := mux.Vars(req)["vip"]
-	isvip, err := strconv.Atoi(vip)
+
+	if req.Method == http.MethodPut {
+		setFee(res, req)
+		return
+	}
+
+	fees := storage.GetFee(Conf.Mongo)
+	if fees.Norm == 0 {
+		res.WriteHeader(http.StatusInternalServerError)
+		return
+	}
+	res.WriteHeader(http.StatusOK)
+	err = json.NewEncoder(res).Encode(fees)
 	if err != nil {
-		seelog.Info("invalid vip flag:", err)
+		seelog.Info("serializing error:", err)
+	}
+}
+
+//SetFee set common users or vip users fee
+func setFee(res http.ResponseWriter, req *http.Request) {
+	body, err := ioutil.ReadAll(req.Body)
+	if err != nil {
+		seelog.Info("read request body error:", err)
 		res.WriteHeader(http.StatusBadRequest)
 		return
 	}
-	req.ParseForm()
 
-	v := req.PostFormValue("fee")
+	fees := storage.FeeInfo{}
+	err = json.Unmarshal(body, &fees)
+	if err != nil {
+		seelog.Info("decode request body error, ", err)
+		res.WriteHeader(http.StatusBadRequest)
+		return
+	}
 
-	fee, _ := strconv.ParseFloat(v, 8)
-	err = storage.SetFee(fee, isvip, Conf.Mongo)
+	err = storage.SetFee(fees, Conf.Mongo)
 	if err != nil {
 		res.WriteHeader(http.StatusBadRequest)
 		return
