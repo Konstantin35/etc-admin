@@ -3,8 +3,8 @@
 	<ul>
 		<li>
 			<h3>用户名: 
-			  <span v-if="user.name !== '未注册'">{{user.name}}</span>
-			  <span style="color:#f12345" v-else>{{user.name}}</span>
+			  <span v-if="user.name !== ''">{{user.name}}</span>
+			  <span style="color:#f12345" v-else>未注册</span>
 			</h3>
 		</li>
 		<template v-if="!edit">
@@ -56,6 +56,7 @@ import walletPanel from './walletPanel.vue'
 				this.edit = false
 				this.user.tel = this.tel
 				this.user.email = this.email
+				this.updateData(this.index)
 			}
 		},
 		watch: {

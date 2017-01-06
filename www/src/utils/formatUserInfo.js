@@ -4,9 +4,10 @@ export default function(data){
 	var users = []
 	data.forEach(el => {
 		var user = {
-			name: el.BasicInfo.account || '未注册',
+			name: el.BasicInfo.account,
 			tel: el.BasicInfo.phone,
 			email: el.BasicInfo.email,
+			vip: el.BasicInfo.vip,
 			wallet: []
 		}
 		var wallet = {
