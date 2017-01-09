@@ -30,11 +30,12 @@ module.exports = {
     cssSourceMap: false
   },
   BTCC:{
-    // PM_APIHOST: 'http://10.0.21.37:8090/',
-    PM_APIHOST: 'http://localhost:8090/',
+    PM_APIHOST: 'http://10.0.21.37:8090/',
+    // PM_APIHOST: 'http://localhost:8090/',
     PM_JWT: 'BTCC_JWT_TOKEN',
     PM_USERNAME: 'USERNAME',
     PM_PWD: 'PASSWORD',
-    PM_ISREMEMBER: 'ISREMEMBER'
+    PM_ISREMEMBER: 'ISREMEMBER',
+    PM_QUERY_HISTORY: 'QUERY_HISTORY'
   }
 }

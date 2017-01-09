@@ -1,8 +1,8 @@
 <template>
 	<div class="home container">
 	  <chart :type="'line'" :data="seriesData" :options="options"></chart>
-    <div class="pool-stats">
-      <h2>矿池状态概览</h2>
+    <div class="pool-stats pool-panel">
+      <h1>矿池状态概览</h1>
       <ul>
         <li><p>矿池当前算力: <span>{{hashrate}} </span></p></li>
         <li><p>活跃用户数: <span>{{minersTotal}}</span></p></li>
@@ -15,6 +15,8 @@
 <script type="text/javascript">
 import Chart from 'vue-bulma-chartjs'
 import config from '../../config'
+import formatHashrate from '../utils/formatHashrate'
+import formatEtc from '../utils/formatEtc'
 
 export default {
   components: {
@@ -42,21 +44,7 @@ export default {
       tooltips:{
         callbacks:{
           label(item,data){
-            var y = item.yLabel
-            var len = Math.round(y).toString().length;
-            var Y = ''
-            if(len > 12){
-              Y = (y/Math.pow(10,12)).toFixed(2) + ' TH/s';
-            }else if(len >9){
-              Y = (y/Math.pow(10,9)).toFixed(2) + ' GH/s';
-            }else if(len >6){
-              Y = (y/Math.pow(10,6)).toFixed(2) + ' MH/s';
-            }else if(len > 3){
-              Y = (y/Math.pow(10,3)).toFixed(2) + ' KH/s';
-            }else{
-              Y = 0 + ' KH/s';
-            }
-            return data.datasets[0].label + ' : ' + Y
+            return data.datasets[0].label + ' : ' + formatHashrate(item.yLabel) + '/s'
           }
         }
       },
@@ -77,20 +65,7 @@ export default {
           ticks:{
             beginAtZero: true,
             callback(value,index,values){
-              var len = Math.round(value).toString().length;
-              var Y = ''
-              if(len > 12){
-                Y = (value/Math.pow(10,12)).toFixed(0) + ' TH';
-              }else if(len >9){
-                Y = (value/Math.pow(10,9)).toFixed(0) + ' GH';
-              }else if(len >6){
-                Y = (value/Math.pow(10,6)).toFixed(0) + ' MH';
-              }else if(len > 3){
-                Y = (value/Math.pow(10,3)).toFixed(0) + ' KH';
-              }else{
-                Y = 0 + ' KH';
-              }
-              return Y
+              return formatHashrate(value)
             }
           }
         }]
@@ -121,7 +96,7 @@ export default {
     var header = new Headers({ 'Json-Web-Token' : jwt })
     fetch(config.BTCC.PM_APIHOST + 'main/poolchart',{ headers : header })
     .then(resp => {
-      if(!resp.ok) this.$router.replace('/')
+      if(resp.status === 403) this.$router.replace('/')
       return resp.json()
     })
     .then(json => {
@@ -130,28 +105,32 @@ export default {
         this.chartData.push( el.value )
       })
     })
+    .catch(err => {})
 
     fetch(config.BTCC.PM_APIHOST + 'main/statistic',{ headers : header })
     .then(resp => {
-      if(!resp.ok) this.$router.replace('/')
+      if(resp.status === 403) this.$router.replace('/')
       return resp.json()
     })
     .then(json => {
-      //need format
-      this.hashrate = json.hashrate
+      this.hashrate = formatHashrate(json.hashrate)
       this.minersTotal = json.minersTotal
-      this.poolbalance = json.poolbalance
+      this.poolbalance = formatEtc(json.poolbalance)
     })
+    .catch(err => {})
   }
 }
 </script>
 
 <style type="text/css">
+canvas.chartjs{
+  margin-top: 20px;
+  background-color: #fff;
+}
 .pool-stats {
-  margin-top: 40px;
   margin-bottom: 40px;
 }
-.pool-stats h2{
+.pool-stats h1{
   text-align: center;
 }
 .pool-stats ul{

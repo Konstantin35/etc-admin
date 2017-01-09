@@ -16,19 +16,32 @@ export default {
 </script>
 
 <style>
-html,body,div,p,ul,li,span,label,input,a,h2{
+html,body,div,p,ul,li,span,label,input,a,h1,h2,h3,h4,h5{
   margin: 0;
   padding: 0;
-	color: #333;
 }
 body{
 	background-color: #f3f3f3;
+}
+h1{ font-size: 24px; }
+h2{ font-size: 20px; }
+h3{ font-size: 18px; }
+h4{ font-size: 16px; }
+h5{ font-size: 14px; }
+h1,h2,h3,h4,h5{
+	line-height: 24px;
 }
 
 .container{
 	position: relative;
 	width: 1080px;
 	margin: 0 auto;
+}
+.pool-panel{
+    border: 1px solid #ddd;
+    margin-top: 10px;
+    background-color: #fff;
+    padding: 10px 30px;
 }
 /*. footer
 ---------------------*/
