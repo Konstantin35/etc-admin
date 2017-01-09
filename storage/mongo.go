@@ -29,8 +29,8 @@ type UserInfo struct {
 }
 
 type FeeInfo struct {
-	Vip  float64 `bson:"vip"`
-	Norm float64 `bson:"normal"`
+	Vip  float64 `bson:"vip" json:"vip"`
+	Norm float64 `bson:"normal" json:"norm"`
 }
 
 type offLine struct {

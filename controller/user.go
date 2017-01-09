@@ -1,6 +1,8 @@
 package controller
 
 import (
+	"bytes"
+	"encoding/csv"
 	"encoding/json"
 	"etc-pool-admin/storage"
 	"github.com/cihub/seelog"
@@ -10,6 +12,7 @@ import (
 	"regexp"
 	"strconv"
 	"strings"
+	"time"
 )
 
 const (
@@ -129,6 +132,7 @@ func Fee(res http.ResponseWriter, req *http.Request) {
 	}
 
 	fees := storage.GetFee(Conf.Mongo)
+
 	if fees.Norm == 0 {
 		res.WriteHeader(http.StatusInternalServerError)
 		return
@@ -172,7 +176,7 @@ func GetAddressChartData(res http.ResponseWriter, req *http.Request) {
 
 	if req.Method == http.MethodOptions {
 		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
-		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodGet)
 		res.WriteHeader(http.StatusOK)
 		return
 	}
@@ -205,7 +209,7 @@ func GetAddressStaticData(res http.ResponseWriter, req *http.Request) {
 
 	if req.Method == http.MethodOptions {
 		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
-		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodGet)
 		res.WriteHeader(http.StatusOK)
 		return
 	}
@@ -237,7 +241,7 @@ func GetMinersInfo(res http.ResponseWriter, req *http.Request) {
 
 	if req.Method == http.MethodOptions {
 		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
-		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodGet)
 		res.WriteHeader(http.StatusOK)
 		return
 	}
@@ -269,7 +273,7 @@ func QueryPaymentHistory(res http.ResponseWriter, req *http.Request) {
 
 	if req.Method == http.MethodOptions {
 		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
-		res.Header().Set("Access-Control-Allow-Methods", http.MethodPut)
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodGet)
 		res.WriteHeader(http.StatusOK)
 		return
 	}
@@ -302,6 +306,60 @@ func QueryPaymentHistory(res http.ResponseWriter, req *http.Request) {
 	if err != nil {
 		seelog.Info("serializing payments history response data error:", err)
 	}
+}
+
+func ExportsPayments(res http.ResponseWriter, req *http.Request) {
+	res.Header().Set("Content-Type", "application/csv")
+	res.Header().Set("Access-Control-Allow-Origin", "*")
+	if req.Method == http.MethodOptions {
+		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
+		res.Header().Set("Access-Control-Allow-Methods", http.MethodGet)
+		res.WriteHeader(http.StatusOK)
+		return
+	}
+	// pass, err := validate(req)
+	// if err != nil || pass == false {
+	// 	seelog.Info("validate err:", err)
+	// 	res.WriteHeader(http.StatusForbidden)
+	// 	return
+	// }
+	address := mux.Vars(req)["address"]
+	begin := mux.Vars(req)["begintime"]
+	end := mux.Vars(req)["endtime"]
+	address = strings.ToLower(strings.TrimSpace(address))
+	btime, err := strconv.ParseInt(begin, 10, 64)
+	if err != nil {
+		seelog.Info("convert string time to int error:", err)
+	}
+	etime, err := strconv.ParseInt(end, 10, 64)
+	if err != nil {
+		seelog.Info("convert string time to int error:", err)
+	}
+
+	res.Header().Set("Content-Disposition", "attachment;filename="+address+".csv")
+
+	payments := Backend.GetPaymentHistory(address, btime, etime) //begintime and end time is time stamp, dont use string
+	if payments == nil {
+		seelog.Info("no corresponding payments data")
+	}
+
+	b := bytes.Buffer{}
+	writer := csv.NewWriter(&b)
+
+	writer.Write([]string{"date", "tx", "amount"})
+	for _, payment := range payments {
+		stamp := time.Unix(payment["timestamp"].(int64), 0).Format("2006-01-02 15:04:05")
+		tx := payment["tx"].(string)
+		amount := strconv.FormatFloat(float64(payment["amount"].(int64))/1e9, 'f', 4, 32)
+		writer.Write([]string{stamp, tx, amount})
+	}
+
+	res.Header().Set("contentlength", strconv.Itoa(b.Len()))
+	writer.Flush()
+
+	res.WriteHeader(http.StatusOK)
+	res.Write(b.Bytes())
+	//TODO if file too big , fix this bug
 }
 
 func regexpParam(param string) string {
