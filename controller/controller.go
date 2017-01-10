@@ -46,6 +46,8 @@ func Login(res http.ResponseWriter, req *http.Request) {
 
 	username := req.FormValue("username")
 	pwd := req.FormValue("password")
+
+	seelog.Info("username:", username)
 	//validate username and pwd
 	checked := storage.CheckUserAdmin(username, pwd, Conf.Mongo)
 	if checked == false {

@@ -23,4 +23,8 @@ func init() {
 	Routes.HandleFunc("/user/info/miners/{address:0x[0-9a-fA-F]{40}}", controller.GetMinersInfo).Methods("GET", "OPTIONS")
 	Routes.HandleFunc("/user/history/payments/{address:0x[0-9a-fA-F]{40}}/{begintime}/{endtime}", controller.QueryPaymentHistory).Methods("GET", "OPTIONS")
 	Routes.HandleFunc("/user/history/payments/exports/{address:0x[0-9a-fA-F]{40}}/{begintime}/{endtime}", controller.ExportsPayments).Methods("GET", "OPTIONS")
+	/***************routers for pool manage*********************/
+	Routes.HandleFunc("/pool/balance", controller.GetPoolBalance).Methods("GET", "OPTIONS")
+	Routes.HandleFunc("/pool/account/transaction", controller.SendTransaction).Methods("POST", "OPTIONS")
+	Routes.HandleFunc("/pool/history/payments/{begintime}/{endtime}", controller.PoolPaymentHistory).Methods("GET", "OPTIONS")
 }
