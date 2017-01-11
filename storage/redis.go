@@ -265,13 +265,13 @@ func (r *RedisClient) GetPaymentHistory(address string, begin, end int64) []map[
 		return nil
 	}
 	payments := convertPaymentsResults(cmds[0].(*redis.ZSliceCmd))
-	seelog.Info("raw payments data:", payments)
 
 	if begin == -1 && end == -1 { //get all records
 		return payments
 	}
 	length := len(payments)
 	if payments[0]["timestamp"].(int64) > end || payments[length-1]["timestamp"].(int64) < begin {
+		seelog.Info("no corresponding records")
 		return nil
 	}
 
@@ -279,10 +279,8 @@ func (r *RedisClient) GetPaymentHistory(address string, begin, end int64) []map[
 	for idx, val := range payments {
 		stamp := val["timestamp"].(int64)
 		if stamp >= begin && stamp <= end {
-			continue
+			index = idx + 1
 		}
-		index = idx
-		break
 	}
 	return payments[0:index]
 }
