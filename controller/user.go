@@ -311,22 +311,27 @@ func QueryPaymentHistory(res http.ResponseWriter, req *http.Request) {
 func ExportsPayments(res http.ResponseWriter, req *http.Request) {
 	res.Header().Set("Content-Type", "application/csv")
 	res.Header().Set("Access-Control-Allow-Origin", "*")
+
 	if req.Method == http.MethodOptions {
 		res.Header().Set("Access-Control-Allow-Headers", "Json-Web-Token")
 		res.Header().Set("Access-Control-Allow-Methods", http.MethodGet)
 		res.WriteHeader(http.StatusOK)
 		return
 	}
-	// pass, err := validate(req)
-	// if err != nil || pass == false {
-	// 	seelog.Info("validate err:", err)
-	// 	res.WriteHeader(http.StatusForbidden)
-	// 	return
-	// }
+
+	pass, err := validate(req)
+	if err != nil || pass == false {
+		seelog.Info("validate err:", err)
+		res.WriteHeader(http.StatusForbidden)
+		return
+	}
+
 	address := mux.Vars(req)["address"]
+	address = strings.ToLower(strings.TrimSpace(address))
+	res.Header().Set("Access-Control-Expose-Headers", "Payments-Filename")
+	res.Header().Set("Payments-Filename", address+".csv")
 	begin := mux.Vars(req)["begintime"]
 	end := mux.Vars(req)["endtime"]
-	address = strings.ToLower(strings.TrimSpace(address))
 	btime, err := strconv.ParseInt(begin, 10, 64)
 	if err != nil {
 		seelog.Info("convert string time to int error:", err)

@@ -301,7 +301,6 @@ func convertStringMap(m map[string]string) map[string]interface{} {
 func convertPaymentsResults(raw *redis.ZSliceCmd) []map[string]interface{} {
 	var result []map[string]interface{}
 	for _, v := range raw.Val() {
-		seelog.Info("every data:", v.Score)
 		tx := make(map[string]interface{})
 		tx["timestamp"] = int64(v.Score)
 		fields := strings.Split(v.Member.(string), ":")
